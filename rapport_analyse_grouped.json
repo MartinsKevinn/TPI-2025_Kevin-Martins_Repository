@@ -1,0 +1,330 @@
+{
+    "devices": [
+        {
+            "mac": "34:7d:f6:fe:35:fd",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "172.17.121.139"
+            ],
+            "ipv6_addresses": [
+                "fd63:ab67:6b2:0:d45c:87ac:552b:4c63",
+                "fe80::600c:ce15:a34c:c883"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "TPI-laptop._dosvc._tcp.local",
+                "_dosvc._tcp.local"
+            ],
+            "observed_hostnames": [
+                "_dosvc",
+                "TPI-laptop"
+            ]
+        },
+        {
+            "mac": "d4:f5:47:1d:ad:c8",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "172.17.121.112"
+            ],
+            "ipv6_addresses": [
+                "fe80::d6f5:47ff:fe1d:adc8"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "_googlezone._tcp.local",
+                "_googlecast._tcp.local",
+                "1575f53f-61d9-4ddb-6aca-385d00a32868._googlezone._tcp.local",
+                "Google-Nest-Mini-1575f53f61d94ddb6aca385d00a32868._googlecast._tcp.local"
+            ],
+            "observed_hostnames": [
+                "_googlecast",
+                "_googlezone",
+                "1575f53f-61d9-4ddb-6aca-385d00a32868",
+                "Google-Nest-Mini-1575f53f61d94ddb6aca385d00a32868"
+            ]
+        },
+        {
+            "mac": "00:04:4b:b1:0c:ad",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "172.17.121.237"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "_googlecast._tcp.local",
+                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2._googlezone._tcp.local",
+                "_googlezone._tcp.local",
+                "SHIELD-Android-TV-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local"
+            ],
+            "observed_hostnames": [
+                "_googlecast",
+                "_googlezone",
+                "SHIELD-Android-TV-308e3ee335aa459ceaf670edf0bbc0a2",
+                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2"
+            ]
+        },
+        {
+            "mac": "c8:7f:54:df:2a:60",
+            "manufacturer": "udhcp 1.35.0",
+            "ipv4_addresses": [
+                "142.251.111.138",
+                "172.17.121.1",
+                "13.107.5.93",
+                "51.104.15.252",
+                "51.116.253.170",
+                "3.33.235.18",
+                "172.253.115.95",
+                "20.7.2.167",
+                "162.159.133.234",
+                "35.160.35.184",
+                "0.0.0.0",
+                "104.18.32.47",
+                "13.107.246.40",
+                "140.82.113.25"
+            ],
+            "ipv6_addresses": [
+                "fd63:ab67:6b2::1"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [
+                {
+                    "message-type": 1,
+                    "max_dhcp_size": 576,
+                    "param_req_list": [
+                        1,
+                        3,
+                        6,
+                        12,
+                        15,
+                        28,
+                        42
+                    ],
+                    "vendor_class_id": "udhcp 1.35.0",
+                    "client_id": "\u0001T*`"
+                }
+            ],
+            "mdns_services": [],
+            "observed_hostnames": []
+        },
+        {
+            "mac": "ec:b5:fa:1c:6b:01",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "172.17.121.211"
+            ],
+            "ipv6_addresses": [
+                "fe80::eeb5:faff:fe1c:6b01"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "1.0.B.6.C.1.E.F.F.F.A.F.5.B.E.E.0.0.0.0.0.0.0.0.0.0.0.0.0.8.E.F.ip6.arpa",
+                "_hue._tcp.local",
+                "ecb5fa1c6b01.local",
+                "_services._dns-sd._udp.local",
+                "1.0.B.6.C.1.E.F.F.F.A.F.5.B.E.E.0.0.0.0.2.B.6.0.7.6.B.A.3.6.D.F.ip6.arpa",
+                "211.121.17.172.in-addr.arpa",
+                "Hue Bridge - 1C6B01._hue._tcp.local"
+            ],
+            "observed_hostnames": [
+                "_services",
+                "ecb5fa1c6b01",
+                "_hue",
+                "Hue Bridge - 1C6B01",
+                "1",
+                "211"
+            ]
+        },
+        {
+            "mac": "70:de:e2:ef:b5:40",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "0.0.0.0"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [
+                {
+                    "message-type": 3,
+                    "param_req_list": [
+                        1,
+                        121,
+                        3,
+                        6,
+                        15,
+                        119,
+                        252
+                    ],
+                    "max_dhcp_size": 1500,
+                    "client_id": "\u0001p@",
+                    "requested_addr": "172.17.121.122",
+                    "lease_time": 7776000,
+                    "hostname": "NagraScoutDemo12"
+                }
+            ],
+            "mdns_services": [],
+            "observed_hostnames": []
+        },
+        {
+            "mac": "8c:aa:b5:86:d5:68",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "0.0.0.0"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [
+                {
+                    "message-type": 1,
+                    "max_dhcp_size": 1500,
+                    "hostname": "otodo_hub",
+                    "client_id": "\u0001h",
+                    "param_req_list": [
+                        1,
+                        3,
+                        28,
+                        6
+                    ]
+                },
+                {
+                    "message-type": 1,
+                    "max_dhcp_size": 1500,
+                    "hostname": "otodo_hub",
+                    "client_id": "\u0001h",
+                    "param_req_list": [
+                        1,
+                        3,
+                        28,
+                        6
+                    ]
+                },
+                {
+                    "message-type": 3,
+                    "max_dhcp_size": 1500,
+                    "requested_addr": "172.17.121.110",
+                    "client_id": "\u0001h",
+                    "server_id": "172.17.121.1",
+                    "param_req_list": [
+                        1,
+                        3,
+                        28,
+                        6
+                    ],
+                    "hostname": "otodo_hub"
+                }
+            ],
+            "mdns_services": [],
+            "observed_hostnames": []
+        },
+        {
+            "mac": "ce:63:42:5b:58:92",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "172.17.121.118"
+            ],
+            "ipv6_addresses": [
+                "fe80::10f9:5d8d:9606:659b"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": []
+        },
+        {
+            "mac": "b0:c5:54:39:01:19",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "172.17.121.142"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": []
+        },
+        {
+            "mac": "42:29:59:48:c6:a8",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "172.17.121.164"
+            ],
+            "ipv6_addresses": [
+                "fe80::87b:d42b:bb2c:969c"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "2.A.E.C.E.9.5.B.A.4.5.D.0.D.C.1.0.0.0.0.2.B.6.0.7.6.B.A.3.6.D.F.ip6.arpa",
+                "Nagra-Scout-demo-3.local",
+                "164.121.17.172.in-addr.arpa",
+                "C.9.6.9.C.2.B.B.B.2.4.D.B.7.8.0.0.0.0.0.0.0.0.0.0.0.0.0.0.8.E.F.ip6.arpa",
+                "_hue._tcp.local",
+                "Nagra Scout demo 3 ._rdlink._tcp.local",
+                "_services._dns-sd._udp.local",
+                "_rdlink._tcp.local",
+                "Nagra Scout demo 3 ._device-info._tcp.local"
+            ],
+            "observed_hostnames": [
+                "_services",
+                "C",
+                "Nagra-Scout-demo-3",
+                "_hue",
+                "164",
+                "_rdlink",
+                "Nagra Scout demo 3 ",
+                "2"
+            ]
+        },
+        {
+            "mac": "70:ee:50:1f:42:08",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "0.0.0.0"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [
+                {
+                    "message-type": 1,
+                    "max_dhcp_size": 1500,
+                    "param_req_list": [
+                        1,
+                        3,
+                        28,
+                        6
+                    ]
+                },
+                {
+                    "message-type": 3,
+                    "max_dhcp_size": 1500,
+                    "requested_addr": "172.17.121.169",
+                    "server_id": "172.17.121.1",
+                    "param_req_list": [
+                        1,
+                        3,
+                        28,
+                        6
+                    ],
+                    "hostname": "Netatmo-Personal-Weather-Station"
+                }
+            ],
+            "mdns_services": [],
+            "observed_hostnames": []
+        }
+    ]
+}
