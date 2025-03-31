@@ -2,6 +2,10 @@ from scapy.all import rdpcap, DHCP, TCP, UDP, DNS, Raw, IP, IPv6, ARP
 import json
 from oui_lookup import load_oui_database
 from tcp_fingerprint_script import enrich_devices_with_os_guess
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'report')))
+from generate_json_report import export_json
 import time
 import scapy
 from datetime import datetime
@@ -9,20 +13,6 @@ import socket
 import ipaddress
 import tkinter as tk
 from tkinter import filedialog
-
-# Fenêtre tkinter masquée
-root = tk.Tk()
-root.withdraw()
-
-print("📂 Sélectionnez un fichier .pcap à analyser")
-pcap_path = filedialog.askopenfilename(
-    title="Choisissez un fichier PCAP",
-    filetypes=[("PCAP files", "*.pcap"), ("Tous les fichiers", "*.*")]
-)
-
-if not pcap_path:
-    print("❌ Aucun fichier sélectionné. Analyse annulée.")
-    exit(1)
 
 def resolve_hostname(ip):
     try:
@@ -100,6 +90,8 @@ def parse_pcap(file_path, oui_db):
 
                 fingerprint = f"W:{window_size},MSS:{mss},Opts:{'-'.join(opt_names)}"
                 device["tcp_syn_fingerprints"].add(fingerprint)
+                print("→ Fingerprint capturé :", fingerprint)
+
 
             if pkt.haslayer(Raw) and b"User-Agent" in pkt[Raw].load:
                 raw_data = pkt[Raw].load.decode(errors="ignore")
@@ -165,11 +157,21 @@ def parse_pcap(file_path, oui_db):
 
 if __name__ == "__main__":
     oui_db = load_oui_database("src/utils/oui.csv")
-    pcap_path = "src/capture/capture26032025_1407.pcap"
+    # Fenêtre tkinter masquée
+    root = tk.Tk()
+    root.withdraw()
+    print("📂 Sélectionnez un fichier .pcap à analyser")
+    pcap_path = filedialog.askopenfilename(
+        title="Choisissez un fichier PCAP",
+        filetypes=[("PCAP files", "*.pcap"), ("Tous les fichiers", "*.*")]
+    )
+
+    if not pcap_path:
+        print("❌ Aucun fichier sélectionné. Analyse annulée.")
+        exit(1)
+
     parsed_data = parse_pcap(pcap_path, oui_db)
 
-    with open("results/rapport_analyse.json", "w", encoding="utf-8") as json_file:
-        json.dump(parsed_data, json_file, indent=4, ensure_ascii=False)
-
-    print("Analyse terminée. Rapport généré : results/rapport_analyse.json")
+    output_file = export_json(parsed_data, pcap_path)
+    print(f"✅ Analyse terminée. Rapport généré : {output_file}")
 

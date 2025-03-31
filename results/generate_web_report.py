@@ -1,8 +1,26 @@
 import json
 from pathlib import Path
+import tkinter as tk
+from tkinter import filedialog
 
 # Charger le fichier JSON
-with open("results/rapport_analyse.json", "r", encoding="utf-8") as f:
+#with open("results/rapport_analyse.json", "r", encoding="utf-8") as f:
+#    data = json.load(f)
+
+# Fenêtre tkinter masquée
+root = tk.Tk()
+root.withdraw()
+print("📂 Sélectionnez le fichier .json à transformer")
+json_path = filedialog.askopenfilename(
+    title="Choisissez un fichier JSON",
+    filetypes=[("JSON files", "*.json"), ("Tous les fichiers", "*.*")]
+)
+
+if not json_path:
+    print("❌ Aucun fichier sélectionné. Conversion annulée.")
+    exit(1)
+
+with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 
 metadata = data.get("metadata", {})
@@ -86,7 +104,8 @@ html += """
 """
 
 # Sauvegarder le fichier HTML
-output_path = Path("results/rapport_web.html")
+output_name = Path(json_path).stem + "_web.html"
+output_path = Path("results") / output_name
 output_path.write_text(html, encoding="utf-8")
 
 print(f"✅ Rapport HTML généré avec succès : {output_path}")

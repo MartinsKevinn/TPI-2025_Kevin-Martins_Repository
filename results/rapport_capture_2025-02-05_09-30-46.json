@@ -1,0 +1,193 @@
+{
+    "metadata": {
+        "capture_start": "2025-02-05 09:30:46",
+        "capture_end": "2025-02-05 09:32:05",
+        "capture_duration_seconds": 79.429,
+        "source_file": "C:/TPI-2025_Kevin-Martins_Repository/TPI-2025_Kevin-Martins_Repository/src/capture/capture.pcap",
+        "scapy_version": "2.6.1"
+    },
+    "devices": [
+        {
+            "mac": "34:7d:f6:fe:35:fd",
+            "manufacturer": "Intel Corporate",
+            "ipv4_addresses": [
+                "172.17.121.139"
+            ],
+            "ipv6_addresses": [
+                "fd63:ab67:6b2:0:3565:5416:b864:3317",
+                "fe80::600c:ce15:a34c:c883"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [
+                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK"
+            ],
+            "arp_detected": true,
+            "tcp_syn_analysis": [
+                {
+                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "generic tunnel or VPN",
+                    "confidence": 70
+                },
+                {
+                    "fingerprint": "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "generic tunnel or VPN",
+                    "confidence": 70
+                }
+            ]
+        },
+        {
+            "mac": "00:04:4b:b1:0c:ad",
+            "manufacturer": "NVIDIA",
+            "ipv4_addresses": [
+                "172.17.121.237"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "_googlecast._tcp.local."
+            ],
+            "observed_hostnames": [
+                "_googlecast"
+            ],
+            "tcp_syn_fingerprints": [],
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "8c:aa:b5:86:d5:68",
+            "manufacturer": "Espressif Inc.",
+            "ipv4_addresses": [
+                "0.0.0.0",
+                "172.17.121.110"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [
+                {
+                    "message-type": 1,
+                    "max_dhcp_size": 1500,
+                    "hostname": "otodo_hub",
+                    "client_id": "\u0001h",
+                    "param_req_list": [
+                        1,
+                        3,
+                        28,
+                        6
+                    ]
+                },
+                {
+                    "message-type": 3,
+                    "max_dhcp_size": 1500,
+                    "requested_addr": "172.17.121.110",
+                    "client_id": "\u0001h",
+                    "server_id": "172.17.121.1",
+                    "param_req_list": [
+                        1,
+                        3,
+                        28,
+                        6
+                    ],
+                    "hostname": "otodo_hub"
+                }
+            ],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "arp_detected": true,
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "c8:7f:54:df:2a:60",
+            "manufacturer": "ASUSTek COMPUTER INC.",
+            "ipv4_addresses": [
+                "216.239.34.157",
+                "172.253.63.95",
+                "172.253.63.138",
+                "23.209.72.40",
+                "208.80.154.240",
+                "13.78.111.198",
+                "64.233.180.155",
+                "64.233.180.95",
+                "142.251.163.139",
+                "23.200.3.27",
+                "208.80.154.224",
+                "142.251.167.106",
+                "172.253.62.94",
+                "172.17.121.1"
+            ],
+            "ipv6_addresses": [
+                "fe80::ca7f:54ff:fedf:2a60",
+                "fd63:ab67:6b2::1"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "arp_detected": true,
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "d4:f5:47:1d:ad:c8",
+            "manufacturer": "Google, Inc.",
+            "ipv4_addresses": [
+                "172.17.121.112"
+            ],
+            "ipv6_addresses": [
+                "fe80::d6f5:47ff:fe1d:adc8"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
+                "_googlecast._tcp.local."
+            ],
+            "observed_hostnames": [
+                "_googlecast",
+                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2"
+            ],
+            "tcp_syn_fingerprints": [],
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "ec:b5:fa:1c:6b:01",
+            "manufacturer": "Philips Lighting BV",
+            "ipv4_addresses": [
+                "172.17.121.211"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "3c:a3:08:7a:84:bd",
+            "manufacturer": "Texas Instruments",
+            "ipv4_addresses": [
+                "172.17.121.176"
+            ],
+            "ipv6_addresses": [],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "arp_detected": true,
+            "tcp_syn_analysis": []
+        }
+    ]
+}

@@ -3,7 +3,7 @@
         "capture_start": "2025-03-26 14:02:39",
         "capture_end": "2025-03-26 14:06:13",
         "capture_duration_seconds": 213.887,
-        "source_file": "src/capture/capture26032025_1407.pcap",
+        "source_file": "C:/TPI-2025_Kevin-Martins_Repository/TPI-2025_Kevin-Martins_Repository/src/capture/capture26032025_1407.pcap",
         "scapy_version": "2.6.1"
     },
     "devices": [
@@ -14,21 +14,21 @@
                 "172.17.121.139"
             ],
             "ipv6_addresses": [
-                "fe80::600c:ce15:a34c:c883",
-                "fd63:ab67:6b2:0:d45c:87ac:552b:4c63"
+                "fd63:ab67:6b2:0:d45c:87ac:552b:4c63",
+                "fe80::600c:ce15:a34c:c883"
             ],
             "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
-                "SHIELD-Android-TV-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
                 "TPI-laptop._dosvc._tcp.local.",
+                "SHIELD-Android-TV-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
                 "Google-Nest-Mini-1575f53f61d94ddb6aca385d00a32868._googlecast._tcp.local."
             ],
             "observed_hostnames": [
+                "Google-Nest-Mini-1575f53f61d94ddb6aca385d00a32868",
                 "TPI-laptop",
-                "SHIELD-Android-TV-308e3ee335aa459ceaf670edf0bbc0a2",
-                "Google-Nest-Mini-1575f53f61d94ddb6aca385d00a32868"
+                "SHIELD-Android-TV-308e3ee335aa459ceaf670edf0bbc0a2"
             ],
             "tcp_syn_fingerprints": [
                 "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
@@ -59,20 +59,20 @@
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
-                "_googlezone._tcp.local.",
-                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
-                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2._googlezone._tcp.local.",
                 "_googlecast._tcp.local.",
-                "1575f53f-61d9-4ddb-6aca-385d00a32868._googlezone._tcp.local.",
-                "google-nest-mini-1575f53f61d94ddb6aca385d00a32868._googlecast._tcp.local."
+                "google-nest-mini-1575f53f61d94ddb6aca385d00a32868._googlecast._tcp.local.",
+                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2._googlezone._tcp.local.",
+                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
+                "_googlezone._tcp.local.",
+                "1575f53f-61d9-4ddb-6aca-385d00a32868._googlezone._tcp.local."
             ],
             "observed_hostnames": [
-                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2",
-                "_googlezone",
-                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2",
-                "_googlecast",
                 "google-nest-mini-1575f53f61d94ddb6aca385d00a32868",
-                "1575f53f-61d9-4ddb-6aca-385d00a32868"
+                "1575f53f-61d9-4ddb-6aca-385d00a32868",
+                "_googlezone",
+                "_googlecast",
+                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2",
+                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2"
             ],
             "tcp_syn_fingerprints": [],
             "tcp_syn_analysis": []
@@ -88,18 +88,18 @@
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
-                "_googlezone._tcp.local.",
-                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
-                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2._googlezone._tcp.local.",
                 "_googlecast._tcp.local.",
-                "google-nest-mini-1575f53f61d94ddb6aca385d00a32868._googlecast._tcp.local."
+                "google-nest-mini-1575f53f61d94ddb6aca385d00a32868._googlecast._tcp.local.",
+                "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2._googlezone._tcp.local.",
+                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
+                "_googlezone._tcp.local."
             ],
             "observed_hostnames": [
-                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2",
+                "google-nest-mini-1575f53f61d94ddb6aca385d00a32868",
                 "_googlezone",
                 "_googlecast",
                 "308e3ee3-35aa-459c-eaf6-70edf0bbc0a2",
-                "google-nest-mini-1575f53f61d94ddb6aca385d00a32868"
+                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2"
             ],
             "tcp_syn_fingerprints": [],
             "tcp_syn_analysis": []
@@ -108,20 +108,20 @@
             "mac": "c8:7f:54:df:2a:60",
             "manufacturer": "ASUSTek COMPUTER INC.",
             "ipv4_addresses": [
-                "104.18.32.47",
-                "172.17.121.1",
-                "51.116.253.170",
-                "142.251.111.138",
                 "51.104.15.252",
-                "172.253.115.95",
-                "162.159.133.234",
-                "3.33.235.18",
-                "35.160.35.184",
-                "13.107.5.93",
-                "20.7.2.167",
+                "13.107.246.40",
                 "140.82.113.25",
+                "142.251.111.138",
+                "104.18.32.47",
+                "51.116.253.170",
+                "3.33.235.18",
+                "20.7.2.167",
+                "162.159.133.234",
+                "172.253.115.95",
+                "13.107.5.93",
+                "35.160.35.184",
                 "0.0.0.0",
-                "13.107.246.40"
+                "172.17.121.1"
             ],
             "ipv6_addresses": [
                 "fe80::ca7f:54ff:fedf:2a60",
@@ -177,8 +177,8 @@
             "mac": "70:de:e2:ef:b5:40",
             "manufacturer": "Apple, Inc.",
             "ipv4_addresses": [
-                "172.17.121.122",
-                "0.0.0.0"
+                "0.0.0.0",
+                "172.17.121.122"
             ],
             "ipv6_addresses": [],
             "possible_type": null,
@@ -212,8 +212,8 @@
             "mac": "8c:aa:b5:86:d5:68",
             "manufacturer": "Espressif Inc.",
             "ipv4_addresses": [
-                "172.17.121.110",
-                "0.0.0.0"
+                "0.0.0.0",
+                "172.17.121.110"
             ],
             "ipv6_addresses": [],
             "possible_type": null,
@@ -313,16 +313,16 @@
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
-                "_hue._tcp.local.",
-                "lb._dns-sd._udp.local.",
                 "Nagra-Scout-demo-3.local.",
-                "Nagra Scout demo 3 ._rdlink._tcp.local."
+                "lb._dns-sd._udp.local.",
+                "Nagra Scout demo 3 ._rdlink._tcp.local.",
+                "_hue._tcp.local."
             ],
             "observed_hostnames": [
-                "_hue",
-                "lb",
+                "Nagra-Scout-demo-3.local.",
                 "Nagra Scout demo 3 ",
-                "Nagra-Scout-demo-3.local."
+                "_hue",
+                "lb"
             ],
             "tcp_syn_fingerprints": [],
             "arp_detected": true,
@@ -332,8 +332,8 @@
             "mac": "70:ee:50:1f:42:08",
             "manufacturer": "Netatmo",
             "ipv4_addresses": [
-                "172.17.121.169",
-                "0.0.0.0"
+                "0.0.0.0",
+                "172.17.121.169"
             ],
             "ipv6_addresses": [],
             "possible_type": null,
