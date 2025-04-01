@@ -59,7 +59,7 @@ html = f"""
 for device in devices:
     html += f"""
     <div class="device">
-        <h2>Appareil - {device.get("mac", "Inconnu")}</h2>
+        <h2>Appareil - {device.get("hostname_from_dhcp", "Nom inconnu")} - {device.get("mac", "Inconnu")}</h2>
         <p><strong>Fabricant :</strong> {device.get("manufacturer", "Inconnu")}</p>
         <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
         <p><strong>IPv4 :</strong> {', '.join(device.get("ipv4_addresses", []))}</p>

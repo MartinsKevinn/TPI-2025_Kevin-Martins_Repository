@@ -75,6 +75,11 @@ def parse_pcap(file_path, oui_db):
                             value = value.decode(errors="ignore")
                         dhcp_info[key] = value
                 device["dhcp_info"].append(dhcp_info)
+                # Extraire le hostname si présent
+                hostname_dhcp = dhcp_info.get("hostname")
+                if hostname_dhcp:
+                    device["hostname_from_dhcp"] = hostname_dhcp
+
 
             if pkt.haslayer(TCP) and pkt[TCP].flags == "S":
                 tcp_options = pkt[TCP].options
