@@ -16,6 +16,8 @@ from tkinter import filedialog
 from collections import Counter
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
 from port_mapping import PORT_APP_MAPPING
+from tls_analysis import extract_tls_info
+
 
 
 def resolve_hostname(ip):
@@ -128,7 +130,6 @@ def parse_pcap(file_path, oui_db):
                 device["tcp_syn_fingerprints"].add(fingerprint)
                 print("→ Fingerprint capturé :", fingerprint)
 
-
             if pkt.haslayer(Raw) and b"User-Agent" in pkt[Raw].load:
                 raw_data = pkt[Raw].load.decode(errors="ignore")
                 for line in raw_data.split("\\r\\n"):
@@ -177,6 +178,11 @@ def parse_pcap(file_path, oui_db):
                         base_domain = ".".join(parts[-2:])
                         device["domain_contact_counter"][base_domain] = device["domain_contact_counter"].get(base_domain, 0) + 1
 
+        #
+            tls_info = extract_tls_info(pkt)
+            if tls_info:
+                device.setdefault("tls_communications", []).append(tls_info)
+
 
     for device in devices_by_mac.values():
         device["ipv4_addresses"] = list(device["ipv4_addresses"])
@@ -205,6 +211,15 @@ def parse_pcap(file_path, oui_db):
         device["ports_tcp"] = sorted(list(device.get("ports_tcp", [])))
         device["ports_udp"] = sorted(list(device.get("ports_udp", [])))
 
+        if "tls_communications" in device:
+            seen = set()
+            unique_tls = []
+            for entry in device["tls_communications"]:
+                key = (entry["dest_ip"], entry["sni"], entry["version"])
+                if key not in seen:
+                    seen.add(key)
+                    unique_tls.append(entry)
+            device["tls_communications"] = unique_tls
 
 
 

@@ -39,6 +39,7 @@ html = f"""
         th, td {{ border: 1px solid #aaa; padding: 8px; text-align: left; }}
         th {{ background-color: #ddd; }}
         .proto-known {{background-color: #d9fdd3;  /* Vert léger */}}
+        table.tls {{background-color: #f9f9f9;}}
     </style>
 </head>
 <body>
@@ -61,6 +62,7 @@ for device in devices:
         <h2>Appareil - {device.get("hostname_from_dhcp", "Nom inconnu")} - {device.get("mac", "Inconnu")}</h2>
         <p><strong>Fabricant :</strong> {device.get("manufacturer", "Inconnu")}</p>
         <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
+        <p><strong>TLS détecté :</strong> {"✅ Oui" if device.get("tls_detected") else "❌ Non"}</p>
         <p><strong>IPv4 :</strong> {', '.join(device.get("ipv4_addresses", []))}</p>
         <p><strong>IPv6 :</strong> {', '.join(device.get("ipv6_addresses", []))}</p>
         <p><strong>Type détecté :</strong> {device.get("possible_type", "Indéterminé")}</p>
@@ -76,7 +78,7 @@ for device in devices:
                 for entry in device.get('tcp_syn_analysis', [])
             ) or "<tr><td colspan='2'>Aucun</td></tr>"}
         </table>
-
+        
         <p><strong>User-Agents :</strong></p>
         <ul>{"".join(f"<li>{ua}</li>" for ua in device.get("http_user_agents", [])) or "<li>Aucun</li>"}</ul>
 
@@ -90,6 +92,15 @@ for device in devices:
         <ul>
             {"".join(f"<li>{domain}</li>" for domain in device.get("top_domains_contacted", [])) or "<li>Aucun</li>"}
         </ul>
+
+        <p><strong>Communications TLS détectées :</strong></p>
+        <table class=table>
+            <tr><th>Destination IP</th><th>SNI</th><th>Version TLS</th></tr>
+            {''.join(
+                f"<tr><td>{entry.get('dest_ip', 'Inconnu')}</td><td>{entry.get('sni', 'Inconnu')}</td><td>{entry.get('version', 'Inconnu')}</td></tr>"
+                for entry in device.get("tls_communications", [])
+            ) or "<tr><td colspan='3'>Aucune communication TLS détectée</td></tr>"}
+        </table>
 
         <p><strong>Ports TCP détectés :</strong></p>
         <table>
