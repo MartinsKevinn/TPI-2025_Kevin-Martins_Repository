@@ -3,10 +3,6 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog
 
-# Charger le fichier JSON
-#with open("results/rapport_analyse.json", "r", encoding="utf-8") as f:
-#    data = json.load(f)
-
 # Fenêtre tkinter masquée
 root = tk.Tk()
 root.withdraw()
@@ -26,7 +22,6 @@ with open(json_path, "r", encoding="utf-8") as f:
 metadata = data.get("metadata", {})
 devices = data.get("devices", [])
 
-
 # Générer un HTML simple
 html = f"""
 <!DOCTYPE html>
@@ -40,6 +35,10 @@ html = f"""
         .device h2 {{ margin-top: 0; }}
         ul {{ padding-left: 20px; }}
         .meta {{ background-color: #e0e0e0; padding: 15px; border-radius: 8px; margin-bottom: 25px; }}
+        table {{ border-collapse: collapse; width: 100%; margin-top: 10px; }}
+        th, td {{ border: 1px solid #aaa; padding: 8px; text-align: left; }}
+        th {{ background-color: #ddd; }}
+        .proto-known {{background-color: #d9fdd3;  /* Vert léger */}}
     </style>
 </head>
 <body>
@@ -65,8 +64,9 @@ for device in devices:
         <p><strong>IPv4 :</strong> {', '.join(device.get("ipv4_addresses", []))}</p>
         <p><strong>IPv6 :</strong> {', '.join(device.get("ipv6_addresses", []))}</p>
         <p><strong>Type détecté :</strong> {device.get("possible_type", "Indéterminé")}</p>
+
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
-        <table border="1" cellpadding="5" cellspacing="0">
+        <table>
             <tr>
                 <th>Fingerprint</th>
                 <th>Estimation système</th>
@@ -76,6 +76,7 @@ for device in devices:
                 for entry in device.get('tcp_syn_analysis', [])
             ) or "<tr><td colspan='2'>Aucun</td></tr>"}
         </table>
+
         <p><strong>User-Agents :</strong></p>
         <ul>{"".join(f"<li>{ua}</li>" for ua in device.get("http_user_agents", [])) or "<li>Aucun</li>"}</ul>
 
@@ -84,6 +85,33 @@ for device in devices:
 
         <p><strong>Noms observés :</strong></p>
         <ul>{"".join(f"<li>{hn}</li>" for hn in device.get("observed_hostnames", [])) or "<li>Aucun</li>"}</ul>
+
+        <p><strong>Top 10 domaines contactés :</strong></p>
+        <ul>
+            {"".join(f"<li>{domain}</li>" for domain in device.get("top_domains_contacted", [])) or "<li>Aucun</li>"}
+        </ul>
+
+        <p><strong>Ports TCP détectés :</strong></p>
+        <table>
+            <tr><th>Port</th><th>Protocole applicatif</th></tr>
+            {''.join(
+                f"<tr class='proto-known'><td>{port}</td><td>{proto}</td></tr>" if proto != "Inconnu" else
+                f"<tr><td>{port}</td><td>{proto}</td></tr>"
+                for port, proto in device.get("protocols_ports", {}).get("TCP", [])
+            ) or "<tr><td colspan='2'>Aucun</td></tr>"}
+        </table>
+
+        <p><strong>Ports UDP détectés :</strong></p>
+        <table>
+            <tr><th>Port</th><th>Protocole applicatif</th></tr>
+            {''.join(
+                f"<tr class='proto-known'><td>{port}</td><td>{proto}</td></tr>" if proto != "Inconnu" else
+                f"<tr><td>{port}</td><td>{proto}</td></tr>"
+                for port, proto in device.get("protocols_ports", {}).get("UDP", [])
+            ) or "<tr><td colspan='2'>Aucun</td></tr>"}
+        </table>
+
+
 
         <p><strong>DHCP Info :</strong></p>
         <ul>

@@ -13,6 +13,10 @@ import socket
 import ipaddress
 import tkinter as tk
 from tkinter import filedialog
+from collections import Counter
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'utils')))
+from port_mapping import PORT_APP_MAPPING
+
 
 def resolve_hostname(ip):
     try:
@@ -53,7 +57,9 @@ def parse_pcap(file_path, oui_db):
                     "dhcp_info": [],
                     "mdns_services": set(),
                     "observed_hostnames": set(),
-                    "tcp_syn_fingerprints": set()
+                    "tcp_syn_fingerprints": set(),
+                    "domain_contact_counter": {},
+                    "protocols_ports": {}  # {"TCP": set([80, 443, 8080]), "UDP": set([53, 5353])}
                 }
 
             device = devices_by_mac[src_mac]
@@ -61,6 +67,26 @@ def parse_pcap(file_path, oui_db):
             if pkt.haslayer(IP):
                 src_ip = pkt[IP].src
                 device["ipv4_addresses"].add(src_ip)
+
+                #TCP ports
+                if pkt.haslayer(TCP):
+                    sport = pkt[TCP].sport #ports de sortie (représentes les ports que l'appareil utilise en local pour donner l'accès à un service)
+                    dport = pkt[TCP].dport #ports de destination (représentes les ports externes que l'appareil va contacter)
+                    for port in (sport, dport):
+                        proto = PORT_APP_MAPPING.get(port, "Inconnu")
+                        if "ports_tcp" not in device:
+                            device["ports_tcp"] = set()
+                        device["ports_tcp"].add(f"{port}")
+
+                #UDP ports
+                if pkt.haslayer(UDP):
+                    sport = pkt[UDP].sport #ports de sortie (représentes les ports que l'appareil utilise en local pour donner l'accès à un service)
+                    dport = pkt[UDP].dport #ports de destination (représentes les ports externes que l'appareil va contacter)
+                    for port in (sport, dport):
+                        proto = PORT_APP_MAPPING.get(port, "Inconnu")
+                        if "ports_udp" not in device:
+                            device["ports_udp"] = set()
+                        device["ports_udp"].add(f"{port}")
 
             if pkt.haslayer(IPv6):
                 device["ipv6_addresses"].add(pkt[IPv6].src)
@@ -75,10 +101,15 @@ def parse_pcap(file_path, oui_db):
                             value = value.decode(errors="ignore")
                         dhcp_info[key] = value
                 device["dhcp_info"].append(dhcp_info)
-                # Extraire le hostname si présent
+                #Extraire le hostname sil existe
                 hostname_dhcp = dhcp_info.get("hostname")
                 if hostname_dhcp:
                     device["hostname_from_dhcp"] = hostname_dhcp
+
+            if pkt.haslayer(TCP):
+                device["protocols_ports"].setdefault("TCP", set()).update([pkt[TCP].sport, pkt[TCP].dport])
+            elif pkt.haslayer(UDP):
+                device["protocols_ports"].setdefault("UDP", set()).update([pkt[UDP].sport, pkt[UDP].dport])
 
 
             if pkt.haslayer(TCP) and pkt[TCP].flags == "S":
@@ -130,13 +161,21 @@ def parse_pcap(file_path, oui_db):
                         "mdns_services": set(),
                         "observed_hostnames": set(),
                         "tcp_syn_fingerprints": set(),
-                        "arp_detected": True  # ➕ flag spécial
+                        "arp_detected": True  #flag spécial
                     }
 
                 device = devices_by_mac[src_mac]
                 device["ipv4_addresses"].add(src_ip)
-                device["arp_detected"] = True  # au cas où le device existait déjà
+                device["arp_detected"] = True  #au cas où le device existait déjà
 
+            if pkt.haslayer(DNS):
+                dns_layer = pkt[DNS]
+                if dns_layer.qdcount > 0 and hasattr(dns_layer.qd, "qname"):
+                    query = dns_layer.qd.qname.decode(errors="ignore").rstrip('.')
+                    parts = query.split('.')
+                    if len(parts) >= 2:
+                        base_domain = ".".join(parts[-2:])
+                        device["domain_contact_counter"][base_domain] = device["domain_contact_counter"].get(base_domain, 0) + 1
 
 
     for device in devices_by_mac.values():
@@ -146,6 +185,28 @@ def parse_pcap(file_path, oui_db):
         device["mdns_services"] = list(device["mdns_services"])
         device["observed_hostnames"] = list(device["observed_hostnames"])
         device["tcp_syn_fingerprints"] = list(device["tcp_syn_fingerprints"])
+
+        # 🔝 Top domaines contactés
+        domain_counts = Counter(device.get("domain_contact_counter", {}))
+        device["top_domains_contacted"] = [domain for domain, _ in domain_counts.most_common(10)]
+        device.pop("domain_contact_counter", None)
+
+        # ✅ Ports par protocole avec application associée
+        protocols_ports_cleaned = {}
+        for proto, port_set in device.get("protocols_ports", {}).items():
+            cleaned_ports = []
+            for port in port_set:
+                app_name = PORT_APP_MAPPING.get(port, "Inconnu")
+                cleaned_ports.append((port, app_name))
+            protocols_ports_cleaned[proto] = sorted(cleaned_ports)
+        device["protocols_ports"] = protocols_ports_cleaned
+
+        # 🔧 Conversion en liste simple pour les tableaux si besoin
+        device["ports_tcp"] = sorted(list(device.get("ports_tcp", [])))
+        device["ports_udp"] = sorted(list(device.get("ports_udp", [])))
+
+
+
 
     enriched_devices = enrich_devices_with_os_guess(list(devices_by_mac.values()))
 
