@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog
+from collections import OrderedDict
 
 # Fenêtre tkinter masquée
 root = tk.Tk()
@@ -55,14 +56,24 @@ html = f"""
     </div>
 """
 
+#Priorité d'affichage du nom en fonction de sa provenance dans le parsing
+def determine_device_name(device):
+    if device.get("hostname_from_dhcp"):
+        return device["hostname_from_dhcp"]
+    elif device.get("observed_hostnames"):
+        return device["observed_hostnames"][0]
+    elif device.get("arp_name_fallback"):
+        return device["arp_name_fallback"]
+    else:
+        return "Nom inconnu"
+
 # Affichage des appareils
 for device in devices:
     html += f"""
     <div class="device">
-        <h2>Appareil - {device.get("hostname_from_dhcp", "Nom inconnu")} - {device.get("mac", "Inconnu")}</h2>
+        <h2>Appareil - {determine_device_name(device)} - {device.get("mac", "Inconnu")}</h2>
         <p><strong>Fabricant :</strong> {device.get("manufacturer", "Inconnu")}</p>
         <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
-        <p><strong>TLS détecté :</strong> {"✅ Oui" if device.get("tls_detected") else "❌ Non"}</p>
         <p><strong>IPv4 :</strong> {', '.join(device.get("ipv4_addresses", []))}</p>
         <p><strong>IPv6 :</strong> {', '.join(device.get("ipv6_addresses", []))}</p>
         <p><strong>Type détecté :</strong> {device.get("possible_type", "Indéterminé")}</p>
@@ -102,38 +113,76 @@ for device in devices:
             ) or "<tr><td colspan='3'>Aucune communication TLS détectée</td></tr>"}
         </table>
 
-        <p><strong>Ports TCP détectés :</strong></p>
+                <p><strong>Ports TCP détectés (protocole connu) :</strong></p>
         <table>
             <tr><th>Port</th><th>Protocole applicatif</th></tr>
             {''.join(
-                f"<tr class='proto-known'><td>{port}</td><td>{proto}</td></tr>" if proto != "Inconnu" else
-                f"<tr><td>{port}</td><td>{proto}</td></tr>"
+                f"<tr class='proto-known'><td>{port}</td><td>{proto}</td></tr>"
                 for port, proto in device.get("protocols_ports", {}).get("TCP", [])
-            ) or "<tr><td colspan='2'>Aucun</td></tr>"}
+                if proto != "Inconnu"
+            ) or "<tr><td colspan='2'>Aucun port connu</td></tr>"}
         </table>
 
-        <p><strong>Ports UDP détectés :</strong></p>
+        <p><strong>Ports UDP détectés (protocole connu) :</strong></p>
         <table>
             <tr><th>Port</th><th>Protocole applicatif</th></tr>
             {''.join(
-                f"<tr class='proto-known'><td>{port}</td><td>{proto}</td></tr>" if proto != "Inconnu" else
-                f"<tr><td>{port}</td><td>{proto}</td></tr>"
+                f"<tr class='proto-known'><td>{port}</td><td>{proto}</td></tr>"
                 for port, proto in device.get("protocols_ports", {}).get("UDP", [])
-            ) or "<tr><td colspan='2'>Aucun</td></tr>"}
+                if proto != "Inconnu"
+            ) or "<tr><td colspan='2'>Aucun port connu</td></tr>"}
         </table>
+
+                <p><strong>Ports TCP sans protocole identifié :</strong></p>
+        <ul>
+    """
+    unknown_tcp = [str(port) for port, app in device.get("protocols_ports", {}).get("TCP", []) if app == "Inconnu"]
+    if unknown_tcp:
+        html += f"<li>{'; '.join(sorted(unknown_tcp, key=int))}</li>"
+    else:
+        html += "<li>Aucun</li>"
+
+    html += """
+        </ul>
+        <p><strong>Ports UDP sans protocole identifié :</strong></p>
+        <ul>
+    """
+    unknown_udp = [str(port) for port, app in device.get("protocols_ports", {}).get("UDP", []) if app == "Inconnu"]
+    if unknown_udp:
+        html += f"<li>{'; '.join(sorted(unknown_udp, key=int))}</li>"
+    else:
+        html += "<li>Aucun</li>"
+
+    html += """
+        </ul>
 
 
 
         <p><strong>DHCP Info :</strong></p>
-        <ul>
     """
-    for entry in device.get("dhcp_info", []):
-        html += f"<li><pre>{json.dumps(entry, indent=2, ensure_ascii=False)}</pre></li>"
-    if not device.get("dhcp_info"):
-        html += "<li>Aucune info DHCP</li>"
 
-    html += """
-        </ul>
+    dhcp_entries = device.get("dhcp_info", [])
+    unique_dhcp_entries = list({json.dumps(entry, sort_keys=True): entry for entry in dhcp_entries}.values())
+
+    if dhcp_entries:
+        # Collecter tous les champs uniques dans tous les paquets DHCP
+        all_keys = set()
+        for entry in unique_dhcp_entries:
+            all_keys.update(entry.keys())
+
+        sorted_keys = sorted(all_keys)
+
+        html += "<table><tr>" + "".join(f"<th>{key}</th>" for key in sorted_keys) + "</tr>"
+        for entry in unique_dhcp_entries:
+            html += "<tr>" + "".join(f"<td>{json.dumps(entry.get(key, ''), ensure_ascii=False)}</td>" for key in sorted_keys) + "</tr>"
+        html += "</table>"
+    else:
+        html += "<p>Aucune information DHCP détectée.</p>"
+
+    os_dhcp = device.get("os_guesses_dhcp", [])
+    if os_dhcp:
+        html += f"<p><strong>OS estimé depuis DHCP :</strong> {', '.join(os_dhcp)}</p>"
+    html +="""
     </div>
     """
 

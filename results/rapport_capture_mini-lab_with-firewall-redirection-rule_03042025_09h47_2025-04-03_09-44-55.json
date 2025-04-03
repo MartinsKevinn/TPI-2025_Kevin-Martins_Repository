@@ -1,0 +1,459 @@
+{
+    "metadata": {
+        "capture_start": "2025-04-03 09:44:55",
+        "capture_end": "2025-04-03 09:47:43",
+        "capture_duration_seconds": 167.935,
+        "source_file": "C:/Users/Kevin/Desktop/capture_mini-lab_with-firewall-redirection-rule_03042025_09h47.pcap",
+        "scapy_version": "2.6.1"
+    },
+    "devices": [
+        {
+            "mac": "e8:9c:25:0b:43:f8",
+            "manufacturer": "ASUSTek COMPUTER INC.",
+            "ipv4_addresses": [
+                "142.250.178.202",
+                "172.217.168.4",
+                "104.18.32.47",
+                "172.217.168.35",
+                "20.90.156.32",
+                "3.33.235.18",
+                "192.168.1.1",
+                "13.107.5.93",
+                "13.107.246.60",
+                "172.64.155.209",
+                "142.250.203.106"
+            ],
+            "ipv6_addresses": [
+                "fe80::ea9c:25ff:fe0b:43f8",
+                "fdeb:1017:a945::1"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        80,
+                        "HTTP"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        61807,
+                        "Inconnu"
+                    ],
+                    [
+                        61882,
+                        "Inconnu"
+                    ],
+                    [
+                        61928,
+                        "Inconnu"
+                    ],
+                    [
+                        61936,
+                        "Inconnu"
+                    ],
+                    [
+                        61937,
+                        "Inconnu"
+                    ],
+                    [
+                        61971,
+                        "Inconnu"
+                    ],
+                    [
+                        61972,
+                        "Inconnu"
+                    ],
+                    [
+                        61973,
+                        "Inconnu"
+                    ],
+                    [
+                        61974,
+                        "Inconnu"
+                    ],
+                    [
+                        61975,
+                        "Inconnu"
+                    ],
+                    [
+                        61976,
+                        "Inconnu"
+                    ],
+                    [
+                        61977,
+                        "Inconnu"
+                    ],
+                    [
+                        61978,
+                        "Inconnu"
+                    ],
+                    [
+                        63619,
+                        "Inconnu"
+                    ]
+                ],
+                "UDP": [
+                    [
+                        53,
+                        "DNS"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        52685,
+                        "Inconnu"
+                    ],
+                    [
+                        54392,
+                        "Inconnu"
+                    ],
+                    [
+                        55004,
+                        "Inconnu"
+                    ],
+                    [
+                        56089,
+                        "Inconnu"
+                    ],
+                    [
+                        56714,
+                        "Inconnu"
+                    ],
+                    [
+                        57329,
+                        "Inconnu"
+                    ],
+                    [
+                        57748,
+                        "Inconnu"
+                    ],
+                    [
+                        58641,
+                        "Inconnu"
+                    ],
+                    [
+                        59680,
+                        "Inconnu"
+                    ],
+                    [
+                        61398,
+                        "Inconnu"
+                    ],
+                    [
+                        61409,
+                        "Inconnu"
+                    ]
+                ]
+            },
+            "ports_tcp": [
+                "443",
+                "61807",
+                "61882",
+                "61928",
+                "61936",
+                "61937",
+                "61971",
+                "61972",
+                "61973",
+                "61974",
+                "61975",
+                "61976",
+                "61977",
+                "61978",
+                "63619",
+                "80"
+            ],
+            "ports_udp": [
+                "443",
+                "55004",
+                "56089",
+                "57329"
+            ],
+            "top_domains_contacted": [
+                "launchdarkly.com",
+                "exp-tas.com",
+                "googleapis.com",
+                "vscode-cdn.net"
+            ],
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "34:7d:f6:fe:35:fd",
+            "manufacturer": "Intel Corporate",
+            "ipv4_addresses": [
+                "192.168.1.139"
+            ],
+            "ipv6_addresses": [
+                "fdeb:1017:a945:0:b150:e199:72d2:7529",
+                "fe80::600c:ce15:a34c:c883"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "_microsoft_mcc._tcp.local."
+            ],
+            "observed_hostnames": [
+                "_microsoft_mcc"
+            ],
+            "tcp_syn_fingerprints": [
+                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK"
+            ],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        80,
+                        "HTTP"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        61807,
+                        "Inconnu"
+                    ],
+                    [
+                        61882,
+                        "Inconnu"
+                    ],
+                    [
+                        61928,
+                        "Inconnu"
+                    ],
+                    [
+                        61936,
+                        "Inconnu"
+                    ],
+                    [
+                        61937,
+                        "Inconnu"
+                    ],
+                    [
+                        61971,
+                        "Inconnu"
+                    ],
+                    [
+                        61972,
+                        "Inconnu"
+                    ],
+                    [
+                        61973,
+                        "Inconnu"
+                    ],
+                    [
+                        61974,
+                        "Inconnu"
+                    ],
+                    [
+                        61975,
+                        "Inconnu"
+                    ],
+                    [
+                        61976,
+                        "Inconnu"
+                    ],
+                    [
+                        61977,
+                        "Inconnu"
+                    ],
+                    [
+                        61978,
+                        "Inconnu"
+                    ],
+                    [
+                        63619,
+                        "Inconnu"
+                    ]
+                ],
+                "UDP": [
+                    [
+                        53,
+                        "DNS"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        5353,
+                        "mDNS"
+                    ],
+                    [
+                        52685,
+                        "Inconnu"
+                    ],
+                    [
+                        54392,
+                        "Inconnu"
+                    ],
+                    [
+                        55004,
+                        "Inconnu"
+                    ],
+                    [
+                        56089,
+                        "Inconnu"
+                    ],
+                    [
+                        56714,
+                        "Inconnu"
+                    ],
+                    [
+                        57329,
+                        "Inconnu"
+                    ],
+                    [
+                        57748,
+                        "Inconnu"
+                    ],
+                    [
+                        58641,
+                        "Inconnu"
+                    ],
+                    [
+                        59680,
+                        "Inconnu"
+                    ],
+                    [
+                        61398,
+                        "Inconnu"
+                    ],
+                    [
+                        61409,
+                        "Inconnu"
+                    ]
+                ]
+            },
+            "ports_tcp": [
+                "443",
+                "61807",
+                "61882",
+                "61928",
+                "61936",
+                "61937",
+                "61971",
+                "61972",
+                "61973",
+                "61974",
+                "61975",
+                "61976",
+                "61977",
+                "61978",
+                "63619",
+                "80"
+            ],
+            "ports_udp": [
+                "443",
+                "5353",
+                "55004",
+                "56089",
+                "57329"
+            ],
+            "top_domains_contacted": [
+                "_tcp.local",
+                "launchdarkly.com",
+                "exp-tas.com",
+                "googleapis.com",
+                "vscode-cdn.net"
+            ],
+            "tcp_syn_analysis": [
+                {
+                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "generic tunnel or VPN",
+                    "confidence": 70
+                }
+            ]
+        },
+        {
+            "mac": "a6:29:7a:ab:27:2f",
+            "manufacturer": "Inconnu",
+            "ipv4_addresses": [
+                "192.168.1.224"
+            ],
+            "ipv6_addresses": [
+                "fe80::1cf4:4127:87cc:ccd0"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "_companion-link._tcp.local.",
+                "_hue._tcp.local."
+            ],
+            "observed_hostnames": [
+                "_companion-link",
+                "_hue"
+            ],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "UDP": [
+                    [
+                        5353,
+                        "mDNS"
+                    ]
+                ]
+            },
+            "ports_udp": [
+                "5353"
+            ],
+            "arp_detected": true,
+            "top_domains_contacted": [
+                "_tcp.local"
+            ],
+            "ports_tcp": [],
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "ec:b5:fa:1c:6b:01",
+            "manufacturer": "Philips Lighting BV",
+            "ipv4_addresses": [
+                "192.168.1.211"
+            ],
+            "ipv6_addresses": [
+                "fe80::eeb5:faff:fe1c:6b01"
+            ],
+            "possible_type": null,
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [
+                "Hue Bridge - 1C6B01._hue._tcp.local."
+            ],
+            "observed_hostnames": [
+                "Hue Bridge - 1C6B01"
+            ],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "UDP": [
+                    [
+                        1900,
+                        "UPnP"
+                    ],
+                    [
+                        5353,
+                        "mDNS"
+                    ]
+                ]
+            },
+            "ports_udp": [
+                "1900",
+                "5353"
+            ],
+            "top_domains_contacted": [
+                "_tcp.local"
+            ],
+            "ports_tcp": [],
+            "tcp_syn_analysis": []
+        }
+    ]
+}
