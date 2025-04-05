@@ -41,6 +41,7 @@ html = f"""
         th {{ background-color: #ddd; }}
         .proto-known {{background-color: #d9fdd3;  /* Vert léger */}}
         table.tls {{background-color: #f9f9f9;}}
+        .device-type {{font-weight: bold; color: #005a9c;}}
     </style>
 </head>
 <body>
@@ -73,10 +74,12 @@ for device in devices:
     <div class="device">
         <h2>Appareil - {determine_device_name(device)} - {device.get("mac", "Inconnu")}</h2>
         <p><strong>Fabricant :</strong> {device.get("manufacturer", "Inconnu")}</p>
+        <p><strong>Type détecté :</strong> {device.get("possible_type", "Indéterminé")}</p>
+        <p class="device-type">Catégorie d'appareil estimée : {device.get("device_type", "Inconnue")}</p>
+
         <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
         <p><strong>IPv4 :</strong> {', '.join(device.get("ipv4_addresses", []))}</p>
         <p><strong>IPv6 :</strong> {', '.join(device.get("ipv6_addresses", []))}</p>
-        <p><strong>Type détecté :</strong> {device.get("possible_type", "Indéterminé")}</p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>

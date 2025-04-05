@@ -28,6 +28,35 @@ def resolve_hostname(ip):
     except Exception:
         return None
 
+def guess_device_type(device):
+    hostname = device.get("hostname_from_dhcp", "").lower()
+    manufacturer = device.get("manufacturer", "").lower()
+    user_agents = " ".join(device.get("http_user_agents", [])).lower()
+
+    if "iphone" in hostname or "ios" in user_agents:
+        return "Smartphone, Apple iPhone"
+    if "ipad" in hostname:
+        return "Tablette, Apple iPad"
+    if "android" in hostname or "android" in user_agents:
+        return "Smartphone, Android"
+    if "macbook" in hostname or "mac" in user_agents or "apple" in manufacturer:
+        return "PC, Apple Macbook"
+    if "windows" in user_agents or "desktop" in hostname or "laptop" in hostname:
+        return "PC, Windows"
+    if any(m in manufacturer for m in ["epson", "canon", "brother", "hp"]) or "printer" in hostname:
+        return "Imprimante"
+    if "tv" in hostname or "smarttv" in user_agents or any(m in manufacturer for m in ["samsung", "lg", "philips", "panasonic"]): #pas sur pour le tv in hostname à cause des chromecast tv
+        return "TV connectée"
+    if "nas" in hostname or "synology" in manufacturer or "QNAP" in manufacturer: #etc...
+        return "NAS"
+    if "router" in hostname or "gateway" in hostname: #or asustek ? etc...
+        return "Routeur"
+    if "chromecast" in hostname:
+        return "Appareil qui fait effet Google Chromecast"
+    
+    return "Inconnu"
+
+
 def parse_pcap(file_path, oui_db):
     packets = rdpcap(file_path)
 
@@ -293,6 +322,8 @@ def parse_pcap(file_path, oui_db):
         device["observed_hostnames"] = list(device["observed_hostnames"])
         device["tcp_syn_fingerprints"] = list(device["tcp_syn_fingerprints"])
         device["os_guesses_dhcp"] = list(device.get("os_guesses_dhcp", []))
+        device["device_type"] = guess_device_type(device)
+
 
         #Top domaines contactés
         domain_counts = Counter(device.get("domain_contact_counter", {}))
