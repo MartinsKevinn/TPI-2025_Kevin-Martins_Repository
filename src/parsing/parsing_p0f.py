@@ -30,7 +30,7 @@ for line in input_fp_path.read_text(encoding="utf-8").splitlines():
 
         # Transformation simplifiée : extraire infos pertinentes
         # Le format de sig est trop complexe, on fait une version simplifiée
-        # Pour la démonstration, on ne garde que certaines infos pour matcher ton système
+        # Pour la démonstration, on ne garde que certaines infos
         simplified = {
             "pattern": sig.replace("*", ".*").replace(":", ",").lower(),  # Expression régulière
             "os": current_label.split(":")[-1].strip(),
