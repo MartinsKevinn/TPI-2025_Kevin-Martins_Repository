@@ -39,7 +39,7 @@ html = f"""
         table {{ border-collapse: collapse; width: 100%; margin-top: 10px; }}
         th, td {{ border: 1px solid #aaa; padding: 8px; text-align: left; }}
         th {{ background-color: #ddd; }}
-        .proto-known {{background-color: #d9fdd3;  /* Vert léger */}}
+        .proto-known {{background-color: #d9fdd3;}}
         table.tls {{background-color: #f9f9f9;}}
         .device-type {{font-weight: bold; color: #005a9c;}}
     </style>
@@ -57,7 +57,8 @@ html = f"""
     </div>
 """
 
-#Priorité d'affichage du nom en fonction de sa provenance dans le parsing
+# Priorité d'affichage du nom
+
 def determine_device_name(device):
     if device.get("hostname_from_dhcp"):
         return device["hostname_from_dhcp"]
@@ -68,20 +69,37 @@ def determine_device_name(device):
     else:
         return "Nom inconnu"
 
-# Affichage des appareils
 for device in devices:
     html += f"""
     <div class="device">
         <h2>Appareil - {determine_device_name(device)} - {device.get("mac", "Inconnu")}</h2>
         <p><strong>Fabricant :</strong> {device.get("manufacturer", "Inconnu")}</p>
         <p class="device-type">Catégorie d'appareil estimée : {device.get("device_type", "Inconnue")}</p>
-
-        <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
         <p><strong>IPv4 :</strong> {', '.join(device.get("ipv4_addresses", []))}</p>
         <p><strong>IPv6 :</strong> {', '.join(device.get("ipv6_addresses", []))}</p>
+        <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
+    """
+    # Section analyse ARP
+    arp = device.get("arp_analysis", {})
+    if arp:
+        html += """
+        <p><strong>Analyse comportementale ARP :</strong></p>
+        <table>
+            <tr><th>Comportement</th><th>Valeur</th></tr>
+        """
+        if arp.get("only_arp"):
+            html += "<tr><td>Appareil uniquement visible via ARP</td><td>✅</td></tr>"
+        if arp.get("acts_as_scanner"):
+            html += f"<tr><td>Appareil semble scanner le réseau</td><td>✅ ({len(arp.get('requested_ips', []))} IP ciblées)</td></tr>"
+        if arp.get("targeted_by_others"):
+            html += "<tr><td>Appareil recherché par d'autres</td><td>✅</td></tr>"
+        if arp.get("likely_passive"):
+            html += "<tr><td>Appareil passif (pas de trafic visible, mais recherché)</td><td>✅</td></tr>"
+        if arp.get("requested_ips"):
+            html += "<tr><td>IP ciblées par cet appareil</td><td>" + ", ".join(arp["requested_ips"]) + "</td></tr>"
+        html += "</table>"
 
-        
-
+    html += f"""
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
             <tr>
@@ -93,7 +111,7 @@ for device in devices:
                 for entry in device.get('tcp_syn_analysis', [])
             ) or "<tr><td colspan='2'>Aucun</td></tr>"}
         </table>
-        
+
         <p><strong>User-Agents :</strong></p>
         <ul>{"".join(f"<li>{ua}</li>" for ua in device.get("http_user_agents", [])) or "<li>Aucun</li>"}</ul>
 
@@ -117,7 +135,7 @@ for device in devices:
             ) or "<tr><td colspan='3'>Aucune communication TLS détectée</td></tr>"}
         </table>
 
-                <p><strong>Ports TCP détectés (protocole connu) :</strong></p>
+        <p><strong>Ports TCP détectés (protocole connu) :</strong></p>
         <table>
             <tr><th>Port</th><th>Protocole applicatif</th></tr>
             {''.join(
@@ -137,7 +155,7 @@ for device in devices:
             ) or "<tr><td colspan='2'>Aucun port connu</td></tr>"}
         </table>
 
-                <p><strong>Ports TCP sans protocole identifié :</strong></p>
+        <p><strong>Ports TCP sans protocole identifié :</strong></p>
         <ul>
     """
     unknown_tcp = [str(port) for port, app in device.get("protocols_ports", {}).get("TCP", []) if app == "Inconnu"]
@@ -160,22 +178,15 @@ for device in devices:
     html += """
         </ul>
 
-
-
         <p><strong>DHCP Info :</strong></p>
     """
-
     dhcp_entries = device.get("dhcp_info", [])
     unique_dhcp_entries = list({json.dumps(entry, sort_keys=True): entry for entry in dhcp_entries}.values())
-
     if dhcp_entries:
-        # Collecter tous les champs uniques dans tous les paquets DHCP
         all_keys = set()
         for entry in unique_dhcp_entries:
             all_keys.update(entry.keys())
-
         sorted_keys = sorted(all_keys)
-
         html += "<table><tr>" + "".join(f"<th>{key}</th>" for key in sorted_keys) + "</tr>"
         for entry in unique_dhcp_entries:
             html += "<tr>" + "".join(f"<td>{json.dumps(entry.get(key, ''), ensure_ascii=False)}</td>" for key in sorted_keys) + "</tr>"
@@ -186,7 +197,8 @@ for device in devices:
     os_dhcp = device.get("os_guesses_dhcp", [])
     if os_dhcp:
         html += f"<p><strong>OS estimé depuis DHCP :</strong> {', '.join(os_dhcp)}</p>"
-    html +="""
+
+    html += """
     </div>
     """
 
@@ -195,7 +207,6 @@ html += """
 </html>
 """
 
-# Sauvegarder le fichier HTML
 output_name = Path(json_path).stem + "_web.html"
 output_path = Path("results") / output_name
 output_path.write_text(html, encoding="utf-8")
