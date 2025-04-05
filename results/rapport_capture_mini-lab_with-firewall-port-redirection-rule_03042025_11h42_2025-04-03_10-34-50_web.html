@@ -15,6 +15,7 @@
         th { background-color: #ddd; }
         .proto-known {background-color: #d9fdd3;  /* Vert léger */}
         table.tls {background-color: #f9f9f9;}
+        .device-type {font-weight: bold; color: #005a9c;}
     </style>
 </head>
 <body>
@@ -32,10 +33,12 @@
     <div class="device">
         <h2>Appareil - e8:9c:25:0b:43:f8 - e8:9c:25:0b:43:f8</h2>
         <p><strong>Fabricant :</strong> ASUSTek COMPUTER INC.</p>
-        <p><strong>ARP détecté :</strong> ✅ Oui</p>
-        <p><strong>IPv4 :</strong> 140.82.121.3, 172.217.168.42, 193.135.3.206, 104.18.86.42, 74.125.206.84, 142.250.178.198, 172.64.144.52, 142.250.178.206, 142.250.178.195, 142.250.203.106, 52.12.47.65, 54.69.251.6, 192.168.1.224, 13.107.5.93, 54.158.200.223, 172.217.168.46, 40.127.240.158, 172.217.168.10, 172.217.168.3, 3.232.253.57, 172.64.155.209, 3.233.158.24, 76.223.31.44, 142.250.203.99, 35.160.151.220, 44.240.52.117, 51.105.71.137, 34.0.63.29, 216.239.34.157, 142.250.203.118, 172.217.168.22, 185.15.58.240, 192.168.1.1, 172.217.168.1, 35.190.80.1, 142.250.178.202, 172.64.146.223, 104.18.43.204, 13.107.246.60, 192.168.1.139, 172.217.168.33, 173.194.188.199, 216.239.34.36, 34.0.38.213, 193.135.3.209, 77.224.14.21, 142.250.203.97, 142.250.203.98, 172.217.168.2, 74.125.11.71, 20.42.65.84, 172.217.168.14, 104.18.32.137, 146.75.117.91, 193.135.3.208, 142.250.178.194, 20.90.156.32, 192.0.73.2, 34.223.74.168, 142.250.203.110, 172.217.168.38, 192.168.1.211, 23.50.108.3, 142.250.178.196, 142.250.203.100, 193.135.26.44, 104.18.40.222, 46.134.194.18, 172.217.168.36, 172.64.152.233, 104.18.39.38, 104.18.32.47, 140.82.121.4, 3.233.158.25, 13.107.246.61, 52.206.112.129, 35.166.226.67, 172.217.168.40, 3.33.235.18, 142.250.203.102, 193.135.26.47</p>
-        <p><strong>IPv6 :</strong> fe80::ea9c:25ff:fe0b:43f8, fdeb:1017:a945::1</p>
         <p><strong>Type détecté :</strong> None</p>
+        <p class="device-type">Catégorie d'appareil estimée : Inconnu</p>
+
+        <p><strong>ARP détecté :</strong> ✅ Oui</p>
+        <p><strong>IPv4 :</strong> 23.50.108.3, 3.33.235.18, 104.18.86.42, 142.250.178.196, 104.18.40.222, 172.217.168.14, 34.0.38.213, 172.217.168.40, 172.217.168.46, 52.206.112.129, 142.250.203.99, 193.135.3.209, 216.239.34.157, 192.168.1.224, 172.217.168.36, 34.223.74.168, 104.18.32.137, 172.217.168.2, 142.250.203.106, 3.233.158.25, 172.217.168.10, 51.105.71.137, 142.250.203.110, 142.250.178.194, 172.217.168.3, 193.135.3.208, 104.18.32.47, 3.232.253.57, 172.64.146.223, 74.125.11.71, 46.134.194.18, 74.125.206.84, 54.158.200.223, 77.224.14.21, 104.18.43.204, 140.82.121.3, 172.64.144.52, 172.217.168.42, 146.75.117.91, 216.239.34.36, 104.18.39.38, 35.190.80.1, 192.168.1.1, 13.107.5.93, 142.250.178.195, 142.250.178.206, 185.15.58.240, 76.223.31.44, 172.217.168.22, 193.135.26.47, 52.12.47.65, 172.64.155.209, 54.69.251.6, 193.135.3.206, 192.168.1.139, 34.0.63.29, 20.42.65.84, 192.168.1.211, 3.233.158.24, 172.217.168.1, 20.90.156.32, 142.250.203.97, 142.250.178.198, 172.64.152.233, 172.217.168.38, 142.250.203.118, 13.107.246.60, 35.166.226.67, 173.194.188.199, 193.135.26.44, 140.82.121.4, 13.107.246.61, 142.250.203.98, 192.0.73.2, 40.127.240.158, 142.250.203.100, 35.160.151.220, 142.250.178.202, 44.240.52.117, 142.250.203.102, 172.217.168.33</p>
+        <p><strong>IPv6 :</strong> fdeb:1017:a945::1, fe80::ea9c:25ff:fe0b:43f8</p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
@@ -43,7 +46,7 @@
                 <th>Fingerprint</th>
                 <th>Estimation système</th>
             </tr>
-            <tr><td>W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-Timestamp-SAckOK-EOL</td><td>generic tunnel or VPN</td></tr><tr><td>W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK</td><td>generic tunnel or VPN</td></tr>
+            <tr><td>W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK</td><td>Système inconnu</td></tr><tr><td>W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-Timestamp-SAckOK-EOL</td><td>Système inconnu</td></tr>
         </table>
         
         <p><strong>User-Agents :</strong></p>
@@ -96,10 +99,12 @@
     <div class="device">
         <h2>Appareil - _microsoft_mcc - 34:7d:f6:fe:35:fd</h2>
         <p><strong>Fabricant :</strong> Intel Corporate</p>
+        <p><strong>Type détecté :</strong> None</p>
+        <p class="device-type">Catégorie d'appareil estimée : Inconnu</p>
+
         <p><strong>ARP détecté :</strong> ✅ Oui</p>
         <p><strong>IPv4 :</strong> 192.168.1.139</p>
         <p><strong>IPv6 :</strong> fe80::600c:ce15:a34c:c883, fdeb:1017:a945:0:b150:e199:72d2:7529</p>
-        <p><strong>Type détecté :</strong> None</p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
@@ -107,7 +112,7 @@
                 <th>Fingerprint</th>
                 <th>Estimation système</th>
             </tr>
-            <tr><td>W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK</td><td>generic tunnel or VPN</td></tr><tr><td>W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK</td><td>generic tunnel or VPN</td></tr>
+            <tr><td>W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK</td><td>Système inconnu</td></tr><tr><td>W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK</td><td>Système inconnu</td></tr>
         </table>
         
         <p><strong>User-Agents :</strong></p>
@@ -158,12 +163,14 @@
     </div>
     
     <div class="device">
-        <h2>Appareil - _raop - a6:29:7a:ab:27:2f</h2>
+        <h2>Appareil - _companion-link - a6:29:7a:ab:27:2f</h2>
         <p><strong>Fabricant :</strong> Inconnu</p>
+        <p><strong>Type détecté :</strong> None</p>
+        <p class="device-type">Catégorie d'appareil estimée : Inconnu</p>
+
         <p><strong>ARP détecté :</strong> ✅ Oui</p>
         <p><strong>IPv4 :</strong> 192.168.1.224</p>
         <p><strong>IPv6 :</strong> fe80::1cf4:4127:87cc:ccd0</p>
-        <p><strong>Type détecté :</strong> None</p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
@@ -178,10 +185,10 @@
         <ul><li>Aucun</li></ul>
 
         <p><strong>Services mDNS :</strong></p>
-        <ul><li>_companion-link._tcp.local.</li><li>_airplay._tcp.local.</li><li>_hue._tcp.local.</li><li>_raop._tcp.local.</li></ul>
+        <ul><li>_airplay._tcp.local.</li><li>_raop._tcp.local.</li><li>_hue._tcp.local.</li><li>_companion-link._tcp.local.</li></ul>
 
         <p><strong>Noms observés :</strong></p>
-        <ul><li>_raop</li><li>_companion-link</li><li>_airplay</li><li>_hue</li></ul>
+        <ul><li>_companion-link</li><li>_airplay</li><li>_raop</li><li>_hue</li></ul>
 
         <p><strong>Top 10 domaines contactés :</strong></p>
         <ul>
@@ -224,10 +231,12 @@
     <div class="device">
         <h2>Appareil - Hue Bridge - 1C6B01 - ec:b5:fa:1c:6b:01</h2>
         <p><strong>Fabricant :</strong> Philips Lighting BV</p>
+        <p><strong>Type détecté :</strong> None</p>
+        <p class="device-type">Catégorie d'appareil estimée : TV connectée</p>
+
         <p><strong>ARP détecté :</strong> ❌ Non</p>
         <p><strong>IPv4 :</strong> 192.168.1.211</p>
         <p><strong>IPv6 :</strong> fe80::eeb5:faff:fe1c:6b01</p>
-        <p><strong>Type détecté :</strong> None</p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
@@ -288,10 +297,12 @@
     <div class="device">
         <h2>Appareil - ae:d9:26:38:ce:09 - ae:d9:26:38:ce:09</h2>
         <p><strong>Fabricant :</strong> Inconnu</p>
-        <p><strong>ARP détecté :</strong> ✅ Oui</p>
-        <p><strong>IPv4 :</strong> 192.168.1.218, 0.0.0.0</p>
-        <p><strong>IPv6 :</strong> </p>
         <p><strong>Type détecté :</strong> None</p>
+        <p class="device-type">Catégorie d'appareil estimée : Inconnu</p>
+
+        <p><strong>ARP détecté :</strong> ✅ Oui</p>
+        <p><strong>IPv4 :</strong> 0.0.0.0, 192.168.1.218</p>
+        <p><strong>IPv6 :</strong> </p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
@@ -352,10 +363,12 @@
     <div class="device">
         <h2>Appareil - Netatmo-Welcome-g35a6cd - 70:ee:50:35:a6:cf</h2>
         <p><strong>Fabricant :</strong> Netatmo</p>
+        <p><strong>Type détecté :</strong> None</p>
+        <p class="device-type">Catégorie d'appareil estimée : Inconnu</p>
+
         <p><strong>ARP détecté :</strong> ✅ Oui</p>
         <p><strong>IPv4 :</strong> 169.254.17.193, 0.0.0.0</p>
         <p><strong>IPv6 :</strong> fe80::72ee:50ff:fe35:a6cf</p>
-        <p><strong>Type détecté :</strong> None</p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
@@ -370,7 +383,7 @@
         <ul><li>Aucun</li></ul>
 
         <p><strong>Services mDNS :</strong></p>
-        <ul><li>_netatmo-lcomm._tcp.local.</li><li>Netatmo-Welcome-g35a6cd._netatmo-lcomm._tcp.local.</li></ul>
+        <ul><li>Netatmo-Welcome-g35a6cd._netatmo-lcomm._tcp.local.</li><li>_netatmo-lcomm._tcp.local.</li></ul>
 
         <p><strong>Noms observés :</strong></p>
         <ul><li>Netatmo-Welcome-g35a6cd</li><li>_netatmo-lcomm</li></ul>
@@ -416,10 +429,12 @@
     <div class="device">
         <h2>Appareil - K12907237 - 58:8f:cf:4c:79:76</h2>
         <p><strong>Fabricant :</strong> Hangzhou Ezviz Software Co.,Ltd.</p>
-        <p><strong>ARP détecté :</strong> ✅ Oui</p>
-        <p><strong>IPv4 :</strong> 169.254.4.131, 169.254.116.53, 172.17.115.107, 0.0.0.0</p>
-        <p><strong>IPv6 :</strong> </p>
         <p><strong>Type détecté :</strong> None</p>
+        <p class="device-type">Catégorie d'appareil estimée : Inconnu</p>
+
+        <p><strong>ARP détecté :</strong> ✅ Oui</p>
+        <p><strong>IPv4 :</strong> 169.254.116.53, 0.0.0.0, 172.17.115.107, 169.254.4.131</p>
+        <p><strong>IPv6 :</strong> </p>
 
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>

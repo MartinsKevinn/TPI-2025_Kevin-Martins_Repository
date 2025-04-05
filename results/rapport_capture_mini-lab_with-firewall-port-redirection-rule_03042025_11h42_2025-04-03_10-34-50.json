@@ -11,91 +11,91 @@
             "mac": "e8:9c:25:0b:43:f8",
             "manufacturer": "ASUSTek COMPUTER INC.",
             "ipv4_addresses": [
-                "140.82.121.3",
-                "172.217.168.42",
-                "193.135.3.206",
-                "104.18.86.42",
-                "74.125.206.84",
-                "142.250.178.198",
-                "172.64.144.52",
-                "142.250.178.206",
-                "142.250.178.195",
-                "142.250.203.106",
-                "52.12.47.65",
-                "54.69.251.6",
-                "192.168.1.224",
-                "13.107.5.93",
-                "54.158.200.223",
-                "172.217.168.46",
-                "40.127.240.158",
-                "172.217.168.10",
-                "172.217.168.3",
-                "3.232.253.57",
-                "172.64.155.209",
-                "3.233.158.24",
-                "76.223.31.44",
-                "142.250.203.99",
-                "35.160.151.220",
-                "44.240.52.117",
-                "51.105.71.137",
-                "34.0.63.29",
-                "216.239.34.157",
-                "142.250.203.118",
-                "172.217.168.22",
-                "185.15.58.240",
-                "192.168.1.1",
-                "172.217.168.1",
-                "35.190.80.1",
-                "142.250.178.202",
-                "172.64.146.223",
-                "104.18.43.204",
-                "13.107.246.60",
-                "192.168.1.139",
-                "172.217.168.33",
-                "173.194.188.199",
-                "216.239.34.36",
-                "34.0.38.213",
-                "193.135.3.209",
-                "77.224.14.21",
-                "142.250.203.97",
-                "142.250.203.98",
-                "172.217.168.2",
-                "74.125.11.71",
-                "20.42.65.84",
-                "172.217.168.14",
-                "104.18.32.137",
-                "146.75.117.91",
-                "193.135.3.208",
-                "142.250.178.194",
-                "20.90.156.32",
-                "192.0.73.2",
-                "34.223.74.168",
-                "142.250.203.110",
-                "172.217.168.38",
-                "192.168.1.211",
                 "23.50.108.3",
-                "142.250.178.196",
-                "142.250.203.100",
-                "193.135.26.44",
-                "104.18.40.222",
-                "46.134.194.18",
-                "172.217.168.36",
-                "172.64.152.233",
-                "104.18.39.38",
-                "104.18.32.47",
-                "140.82.121.4",
-                "3.233.158.25",
-                "13.107.246.61",
-                "52.206.112.129",
-                "35.166.226.67",
-                "172.217.168.40",
                 "3.33.235.18",
+                "104.18.86.42",
+                "142.250.178.196",
+                "104.18.40.222",
+                "172.217.168.14",
+                "34.0.38.213",
+                "172.217.168.40",
+                "172.217.168.46",
+                "52.206.112.129",
+                "142.250.203.99",
+                "193.135.3.209",
+                "216.239.34.157",
+                "192.168.1.224",
+                "172.217.168.36",
+                "34.223.74.168",
+                "104.18.32.137",
+                "172.217.168.2",
+                "142.250.203.106",
+                "3.233.158.25",
+                "172.217.168.10",
+                "51.105.71.137",
+                "142.250.203.110",
+                "142.250.178.194",
+                "172.217.168.3",
+                "193.135.3.208",
+                "104.18.32.47",
+                "3.232.253.57",
+                "172.64.146.223",
+                "74.125.11.71",
+                "46.134.194.18",
+                "74.125.206.84",
+                "54.158.200.223",
+                "77.224.14.21",
+                "104.18.43.204",
+                "140.82.121.3",
+                "172.64.144.52",
+                "172.217.168.42",
+                "146.75.117.91",
+                "216.239.34.36",
+                "104.18.39.38",
+                "35.190.80.1",
+                "192.168.1.1",
+                "13.107.5.93",
+                "142.250.178.195",
+                "142.250.178.206",
+                "185.15.58.240",
+                "76.223.31.44",
+                "172.217.168.22",
+                "193.135.26.47",
+                "52.12.47.65",
+                "172.64.155.209",
+                "54.69.251.6",
+                "193.135.3.206",
+                "192.168.1.139",
+                "34.0.63.29",
+                "20.42.65.84",
+                "192.168.1.211",
+                "3.233.158.24",
+                "172.217.168.1",
+                "20.90.156.32",
+                "142.250.203.97",
+                "142.250.178.198",
+                "172.64.152.233",
+                "172.217.168.38",
+                "142.250.203.118",
+                "13.107.246.60",
+                "35.166.226.67",
+                "173.194.188.199",
+                "193.135.26.44",
+                "140.82.121.4",
+                "13.107.246.61",
+                "142.250.203.98",
+                "192.0.73.2",
+                "40.127.240.158",
+                "142.250.203.100",
+                "35.160.151.220",
+                "142.250.178.202",
+                "44.240.52.117",
                 "142.250.203.102",
-                "193.135.26.47"
+                "172.217.168.33"
             ],
             "ipv6_addresses": [
-                "fe80::ea9c:25ff:fe0b:43f8",
-                "fdeb:1017:a945::1"
+                "fdeb:1017:a945::1",
+                "fe80::ea9c:25ff:fe0b:43f8"
             ],
             "possible_type": null,
             "http_user_agents": [],
@@ -103,8 +103,8 @@
             "mdns_services": [],
             "observed_hostnames": [],
             "tcp_syn_fingerprints": [
-                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-Timestamp-SAckOK-EOL",
-                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK"
+                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-Timestamp-SAckOK-EOL"
             ],
             "protocols_ports": {
                 "TCP": [
@@ -9065,6 +9065,7 @@
                 }
             ],
             "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
             "top_domains_contacted": [
                 "meethue.com",
                 "googleapis.com",
@@ -9079,14 +9080,14 @@
             ],
             "tcp_syn_analysis": [
                 {
-                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-Timestamp-SAckOK-EOL",
-                    "os_guess": "generic tunnel or VPN",
-                    "confidence": 70
+                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "Système inconnu",
+                    "confidence": 0
                 },
                 {
-                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
-                    "os_guess": "generic tunnel or VPN",
-                    "confidence": 70
+                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-Timestamp-SAckOK-EOL",
+                    "os_guess": "Système inconnu",
+                    "confidence": 0
                 }
             ]
         },
@@ -9110,8 +9111,8 @@
                 "_microsoft_mcc"
             ],
             "tcp_syn_fingerprints": [
-                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
-                "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK"
+                "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK"
             ],
             "protocols_ports": {
                 "TCP": [
@@ -16477,6 +16478,7 @@
                 }
             ],
             "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
             "top_domains_contacted": [
                 "microsoft.com",
                 "segment.io",
@@ -16491,14 +16493,14 @@
             ],
             "tcp_syn_analysis": [
                 {
-                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
-                    "os_guess": "generic tunnel or VPN",
-                    "confidence": 70
+                    "fingerprint": "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "Système inconnu",
+                    "confidence": 0
                 },
                 {
-                    "fingerprint": "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
-                    "os_guess": "generic tunnel or VPN",
-                    "confidence": 70
+                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "Système inconnu",
+                    "confidence": 0
                 }
             ]
         },
@@ -16515,15 +16517,15 @@
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
-                "_companion-link._tcp.local.",
                 "_airplay._tcp.local.",
+                "_raop._tcp.local.",
                 "_hue._tcp.local.",
-                "_raop._tcp.local."
+                "_companion-link._tcp.local."
             ],
             "observed_hostnames": [
-                "_raop",
                 "_companion-link",
                 "_airplay",
+                "_raop",
                 "_hue"
             ],
             "tcp_syn_fingerprints": [],
@@ -16545,6 +16547,7 @@
             ],
             "arp_detected": true,
             "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
             "top_domains_contacted": [
                 "_tcp.local"
             ],
@@ -16587,6 +16590,7 @@
                 "5353"
             ],
             "os_guesses_dhcp": [],
+            "device_type": "TV connectée",
             "top_domains_contacted": [
                 "_tcp.local"
             ],
@@ -16597,8 +16601,8 @@
             "mac": "ae:d9:26:38:ce:09",
             "manufacturer": "Inconnu",
             "ipv4_addresses": [
-                "192.168.1.218",
-                "0.0.0.0"
+                "0.0.0.0",
+                "192.168.1.218"
             ],
             "ipv6_addresses": [],
             "possible_type": null,
@@ -16665,6 +16669,7 @@
             "os_guesses_dhcp": [
                 "Probablement un système Windows récent"
             ],
+            "device_type": "Inconnu",
             "top_domains_contacted": [],
             "ports_tcp": [],
             "tcp_syn_analysis": []
@@ -16884,8 +16889,8 @@
                 }
             ],
             "mdns_services": [
-                "_netatmo-lcomm._tcp.local.",
-                "Netatmo-Welcome-g35a6cd._netatmo-lcomm._tcp.local."
+                "Netatmo-Welcome-g35a6cd._netatmo-lcomm._tcp.local.",
+                "_netatmo-lcomm._tcp.local."
             ],
             "observed_hostnames": [
                 "Netatmo-Welcome-g35a6cd",
@@ -16916,6 +16921,7 @@
             "hostname_from_dhcp": "Netatmo-Welcome-g35a6cd",
             "arp_detected": true,
             "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
             "top_domains_contacted": [
                 "_tcp.local"
             ],
@@ -16926,10 +16932,10 @@
             "mac": "58:8f:cf:4c:79:76",
             "manufacturer": "Hangzhou Ezviz Software Co.,Ltd.",
             "ipv4_addresses": [
-                "169.254.4.131",
                 "169.254.116.53",
+                "0.0.0.0",
                 "172.17.115.107",
-                "0.0.0.0"
+                "169.254.4.131"
             ],
             "ipv6_addresses": [],
             "possible_type": null,
@@ -20687,6 +20693,7 @@
             "os_guesses_dhcp": [
                 "Système client générique (DHCP standard)"
             ],
+            "device_type": "Inconnu",
             "top_domains_contacted": [],
             "ports_tcp": [],
             "tcp_syn_analysis": []
