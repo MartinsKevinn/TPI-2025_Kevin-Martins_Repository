@@ -22,39 +22,69 @@ from oui_lookup import load_oui_database
 from tcp_fingerprint_script import enrich_devices_with_os_guess
 
 
+
 def resolve_hostname(ip):
     try:
         return socket.gethostbyaddr(ip)[0]
     except Exception:
         return None
 
+#Fonction pour tenter de donner un indice sur le type de device dans le résultat en fonction des données récupérees
 def guess_device_type(device):
     hostname = device.get("hostname_from_dhcp", "").lower()
     manufacturer = device.get("manufacturer", "").lower()
     user_agents = " ".join(device.get("http_user_agents", [])).lower()
+    mdns = device.get("mdns_services").lower()
 
-    if "iphone" in hostname or "ios" in user_agents:
-        return "Smartphone, Apple iPhone"
     if "ipad" in hostname:
         return "Tablette, Apple iPad"
+    if "iphone" in hostname:
+        return "Smartphone, Apple iPhone"
+    if "appletv" in hostname:
+        return "Box, Apple TV"
+    if "apple" in manufacturer:
+        return "Produit Apple"
     if "android" in hostname or "android" in user_agents:
         return "Smartphone, Android"
-    if "macbook" in hostname or "mac" in user_agents or "apple" in manufacturer:
+    if "macbook" in hostname or "mac" in user_agents:
         return "PC, Apple Macbook"
     if "windows" in user_agents or "desktop" in hostname or "laptop" in hostname:
         return "PC, Windows"
+    if "appletv" in hostname:
+        return "Box, Apple TV"
+    if "sunrisetv" in hostname:
+        return "Box, Sunrise"
+    if "swisscom" in hostname:
+        return "Box, Swisscom"
+    if "nvidia" in manufacturer and "shield" in mdns:
+        return "Box, NVIDIA Shield"
     if any(m in manufacturer for m in ["epson", "canon", "brother", "hp"]) or "printer" in hostname:
         return "Imprimante"
-    if "tv" in hostname or "smarttv" in user_agents or any(m in manufacturer for m in ["samsung", "lg", "philips", "panasonic"]): #pas sur pour le tv in hostname à cause des chromecast tv
-        return "TV connectée"
-    if "nas" in hostname or "synology" in manufacturer or "QNAP" in manufacturer: #etc...
+    if "philips lightning" in manufacturer:
+        return "Pont Philips Hue"
+    if "raspberry pi" in manufacturer:
+        return "Raspberry Pi"
+    if "tv" in hostname or "smarttv" in user_agents or any(m in manufacturer for m in ["samsung", "lg", "philips", "panasonic"]):
+        return "Probablement une TV connectée"
+    if "nas" in hostname or "synology" in manufacturer or "qnap" in manufacturer:
         return "NAS"
-    if "router" in hostname or "gateway" in hostname: #or asustek ? etc...
+    if "router" in hostname or "gateway" in hostname or "asustek" in manufacturer:
         return "Routeur"
-    if "chromecast" in hostname:
+    if "cast" in hostname:
         return "Appareil qui fait effet Google Chromecast"
-    
+
+    # 🔍 Si rien de tout ça : tenter de déterminer si c'est un mobile silencieux
+    if (
+        not device.get("http_user_agents") and
+        not any("vendor_class_id" in entry or "hostname" in entry for entry in device.get("dhcp_info", [])) and
+        not device.get("observed_hostnames") and
+        len(device.get("mdns_services", [])) <= 2 and
+        (len(device.get("ports_tcp", [])) + len(device.get("ports_udp", []))) <= 3
+    ):
+        return "Peu de données, donc probablement un appareil mobile (smartphone, tablette, etc.)"
+
     return "Inconnu"
+
 
 
 def parse_pcap(file_path, oui_db):
@@ -85,7 +115,6 @@ def parse_pcap(file_path, oui_db):
                     "manufacturer": manufacturer_lookup,
                     "ipv4_addresses": set(),
                     "ipv6_addresses": set(),
-                    "possible_type": None,
                     "http_user_agents": set(),
                     "dhcp_info": [],
                     "mdns_services": set(),
@@ -269,7 +298,6 @@ def parse_pcap(file_path, oui_db):
                         "manufacturer": manufacturer_lookup,
                         "ipv4_addresses": set(),
                         "ipv6_addresses": set(),
-                        "possible_type": None,
                         "http_user_agents": set(),
                         "dhcp_info": [],
                         "mdns_services": set(),
@@ -324,7 +352,6 @@ def parse_pcap(file_path, oui_db):
         device["os_guesses_dhcp"] = list(device.get("os_guesses_dhcp", []))
         device["device_type"] = guess_device_type(device)
 
-
         #Top domaines contactés
         domain_counts = Counter(device.get("domain_contact_counter", {}))
         device["top_domains_contacted"] = [domain for domain, _ in domain_counts.most_common(10)]
@@ -353,8 +380,6 @@ def parse_pcap(file_path, oui_db):
                     seen.add(key)
                     unique_tls.append(entry)
             device["tls_communications"] = unique_tls
-
-
 
     enriched_devices = enrich_devices_with_os_guess(list(devices_by_mac.values()))
 

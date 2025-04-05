@@ -74,7 +74,6 @@ for device in devices:
     <div class="device">
         <h2>Appareil - {determine_device_name(device)} - {device.get("mac", "Inconnu")}</h2>
         <p><strong>Fabricant :</strong> {device.get("manufacturer", "Inconnu")}</p>
-        <p><strong>Type détecté :</strong> {device.get("possible_type", "Indéterminé")}</p>
         <p class="device-type">Catégorie d'appareil estimée : {device.get("device_type", "Inconnue")}</p>
 
         <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
