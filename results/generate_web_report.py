@@ -80,6 +80,8 @@ for device in devices:
         <p><strong>IPv4 :</strong> {', '.join(device.get("ipv4_addresses", []))}</p>
         <p><strong>IPv6 :</strong> {', '.join(device.get("ipv6_addresses", []))}</p>
 
+        
+
         <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
         <table>
             <tr>

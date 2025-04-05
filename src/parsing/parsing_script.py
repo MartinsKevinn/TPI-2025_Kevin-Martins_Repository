@@ -34,7 +34,7 @@ def guess_device_type(device):
     hostname = device.get("hostname_from_dhcp", "").lower()
     manufacturer = device.get("manufacturer", "").lower()
     user_agents = " ".join(device.get("http_user_agents", [])).lower()
-    mdns = device.get("mdns_services").lower()
+    mdns = " ".join(device.get("mdns_services", [])).lower()
 
     if "ipad" in hostname:
         return "Tablette, Apple iPad"
@@ -72,6 +72,11 @@ def guess_device_type(device):
         return "Routeur"
     if "cast" in hostname:
         return "Appareil qui fait effet Google Chromecast"
+    
+    if device.get("arp_analysis", {}).get("only_arp"):
+        return "Appareil muet (ARP uniquement – souvent passif ou caché)"
+    if device.get("arp_analysis", {}).get("acts_as_scanner"):
+        return "Appareil actif – scan réseau via ARP"
 
     # 🔍 Si rien de tout ça : tenter de déterminer si c'est un mobile silencieux
     if (
@@ -121,7 +126,8 @@ def parse_pcap(file_path, oui_db):
                     "observed_hostnames": set(),
                     "tcp_syn_fingerprints": set(),
                     "domain_contact_counter": {},
-                    "protocols_ports": {}  # {"TCP": set([80, 443, 8080]), "UDP": set([53, 5353])}
+                    "protocols_ports": {},
+                    "arp_observations": []
                 }
 
             device = devices_by_mac[src_mac]
@@ -341,6 +347,51 @@ def parse_pcap(file_path, oui_db):
             if tls_info:
                 device.setdefault("tls_communications", []).append(tls_info)
 
+
+    def enrich_with_arp_behavior(devices_by_mac, all_packets):
+        arp_seen_targets = {}
+        arp_requests_by_mac = {}
+
+        for pkt in all_packets:
+            if pkt.haslayer(ARP):
+                src_mac = pkt[ARP].hwsrc
+                dst_ip = pkt[ARP].pdst
+                src_ip = pkt[ARP].psrc
+
+                # Enregistrement des IP ciblées par ce MAC
+                if src_mac not in arp_requests_by_mac:
+                    arp_requests_by_mac[src_mac] = set()
+                arp_requests_by_mac[src_mac].add(dst_ip)
+
+                # Qui est recherché dans le réseau ?
+                if dst_ip not in arp_seen_targets:
+                    arp_seen_targets[dst_ip] = set()
+                arp_seen_targets[dst_ip].add(src_mac)
+
+        for mac, device in devices_by_mac.items():
+            device["arp_analysis"] = {}
+
+            #Est-ce que le device est seulement présent dans les pkts ARP ?
+            has_traffic = (
+                device.get("http_user_agents") or
+                device.get("mdns_services") or
+                device.get("ports_tcp") or
+                device.get("ports_udp")
+            )
+            device["arp_analysis"]["only_arp"] = not bool(has_traffic)
+
+            # Est-ce qu'il émet pleins de requêtes ARP ?
+            requested_ips = arp_requests_by_mac.get(mac, set())
+            device["arp_analysis"]["requested_ips"] = list(requested_ips)
+            device["arp_analysis"]["acts_as_scanner"] = len(requested_ips) > 10  # valeur ajustable
+            device["arp_analysis"]["arp_requested_count"] = len(requested_ips)
+
+            # Est-il est souvent recherché ?
+            times_targeted = sum([1 for targets in arp_seen_targets.values() if mac in targets])
+            device["arp_analysis"]["targeted_by_others"] = times_targeted > 3  # ajustable
+            device["arp_analysis"]["likely_passive"] = not has_traffic and times_targeted > 0
+
+
     #Nettoyage final (conversion en liste pour json)
     for device in devices_by_mac.values():
         device["ipv4_addresses"] = list(device["ipv4_addresses"])
@@ -381,6 +432,7 @@ def parse_pcap(file_path, oui_db):
                     unique_tls.append(entry)
             device["tls_communications"] = unique_tls
 
+    enrich_with_arp_behavior(devices_by_mac, packets)
     enriched_devices = enrich_devices_with_os_guess(list(devices_by_mac.values()))
 
     return {
