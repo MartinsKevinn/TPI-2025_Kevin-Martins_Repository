@@ -11,6 +11,7 @@ import time
 import scapy
 import socket
 import ipaddress
+import subprocess
 
 #Modules internes
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'report')))
@@ -440,6 +441,7 @@ def parse_pcap(file_path, oui_db):
             "capture_start": capture_start_str,
             "capture_end": capture_end_str,
             "capture_duration_seconds": duration,
+            "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
             "source_file": file_path,
             "scapy_version": scapy.__version__
         },
@@ -448,21 +450,35 @@ def parse_pcap(file_path, oui_db):
 
 if __name__ == "__main__":
     oui_db = load_oui_database("src/utils/oui.csv")
-    # Fenêtre tkinter masquée
-    root = tk.Tk()
-    root.withdraw()
-    print("📂 Sélectionnez un fichier .pcap à analyser")
-    pcap_path = filedialog.askopenfilename(
-        title="Choisissez un fichier PCAP",
-        filetypes=[("PCAP files", "*.pcap"), ("Tous les fichiers", "*.*")]
-    )
+    # Vérifier si un fichier .pcap est passé en argument
+    if len(sys.argv) > 1:
+        pcap_path = sys.argv[1]
+    else:
+        # Sinon, ouvrir le sélecteur de fichier
+        root = tk.Tk()
+        root.withdraw()
+        print("📂 Sélectionnez un fichier .pcap à analyser")
+        pcap_path = filedialog.askopenfilename(
+            title="Choisissez un fichier PCAP",
+            filetypes=[("PCAP files", "*.pcap"), ("Tous les fichiers", "*.*")]
+        )
 
     if not pcap_path:
         print("❌ Aucun fichier sélectionné. Analyse annulée.")
         exit(1)
 
     parsed_data = parse_pcap(pcap_path, oui_db)
-
     output_file = export_json(parsed_data, pcap_path)
     print(f"✅ Analyse terminée. Rapport généré : {output_file}")
 
+    #Génération HTML direct si nécessaire
+    choice = input("Souhaitez-vous générer la version HTML du rapport maintenant ? (y/n) : ").strip().lower()
+
+    if choice == "y":
+        try:
+            print("🧩 Génération du rapport HTML en cours...")
+            subprocess.run(["python", "src/report/generate_web_report.py", output_file], check=True)
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Erreur lors de la génération HTML : {e}")
+    else:
+        print("📄 Vous pourrez générer le rapport HTML plus tard avec generate_web_report.py")

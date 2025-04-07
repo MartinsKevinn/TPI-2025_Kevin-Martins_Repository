@@ -1,0 +1,80 @@
+{
+    "metadata": {
+        "capture_start": "2025-04-07 10:43:16",
+        "capture_end": "2025-04-07 10:43:17",
+        "capture_duration_seconds": 1.5,
+        "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
+        "source_file": "src\\capture\\capture_20250407_104315.pcap",
+        "scapy_version": "2.6.1"
+    },
+    "devices": [
+        {
+            "mac": "c8:7f:54:df:40:b8",
+            "manufacturer": "ASUSTek COMPUTER INC.",
+            "ipv4_addresses": [
+                "172.17.122.1"
+            ],
+            "ipv6_addresses": [],
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {},
+            "arp_observations": [],
+            "arp_name_fallback": "c8:7f:54:df:40:b8",
+            "arp_detected": true,
+            "os_guesses_dhcp": [],
+            "device_type": "Routeur",
+            "top_domains_contacted": [],
+            "ports_tcp": [],
+            "ports_udp": [],
+            "arp_analysis": {
+                "only_arp": true,
+                "requested_ips": [
+                    "172.17.122.139"
+                ],
+                "acts_as_scanner": false,
+                "arp_requested_count": 1,
+                "targeted_by_others": false,
+                "likely_passive": true
+            },
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "34:7d:f6:fe:35:fd",
+            "manufacturer": "Intel Corporate",
+            "ipv4_addresses": [
+                "172.17.122.139"
+            ],
+            "ipv6_addresses": [
+                "fd78:fdd6:c87:0:702a:2398:1d50:53ac"
+            ],
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {},
+            "arp_observations": [],
+            "arp_name_fallback": "34:7d:f6:fe:35:fd",
+            "arp_detected": true,
+            "os_guesses_dhcp": [],
+            "device_type": "Peu de données, donc probablement un appareil mobile (smartphone, tablette, etc.)",
+            "top_domains_contacted": [],
+            "ports_tcp": [],
+            "ports_udp": [],
+            "arp_analysis": {
+                "only_arp": true,
+                "requested_ips": [
+                    "172.17.122.1"
+                ],
+                "acts_as_scanner": false,
+                "arp_requested_count": 1,
+                "targeted_by_others": false,
+                "likely_passive": true
+            },
+            "tcp_syn_analysis": []
+        }
+    ]
+}

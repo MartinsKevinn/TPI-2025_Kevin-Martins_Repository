@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport d'analyse réseau</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background-color: #f8f8f8; }
+        .device { border: 1px solid #ccc; padding: 15px; margin-bottom: 15px; background-color: white; border-radius: 8px; }
+        .device h2 { margin-top: 0; }
+        ul { padding-left: 20px; }
+        .meta { background-color: #e0e0e0; padding: 15px; border-radius: 8px; margin-bottom: 25px; }
+        table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+        th, td { border: 1px solid #aaa; padding: 8px; text-align: left; }
+        th { background-color: #ddd; }
+        .proto-known {background-color: #d9fdd3;}
+        table.tls {background-color: #f9f9f9;}
+        .device-type {font-weight: bold; color: #005a9c;}
+    </style>
+</head>
+<body>
+    <h1>Rapport d'analyse réseau</h1>
+
+    <div class="meta">
+        <h3>Métadonnées de l'analyse</h3>
+        <p><strong>Fichier analysé :</strong> src\capture\capture_20250407_110138.pcap</p>
+        <p><strong>Début de capture :</strong> 2025-04-07 11:01:38</p>
+        <p><strong>Fin de capture :</strong> 2025-04-07 11:01:38</p>
+        <p><strong>Durée :</strong> 0.191 secondes</p>
+        <p><strong>Version de l'outil :</strong> Scapy 2.6.1</p>
+    </div>
+
+    <div class="device">
+        <h2>Appareil - Nom inconnu - 00:17:88:a2:dc:c5</h2>
+        <p><strong>Fabricant :</strong> Philips Lighting BV</p>
+        <p class="device-type">Catégorie d'appareil estimée : Probablement une TV connectée</p>
+        <p><strong>IPv4 :</strong> 172.17.122.223</p>
+        <p><strong>IPv6 :</strong> </p>
+        <p><strong>ARP détecté :</strong> ❌ Non</p>
+    
+        <p><strong>Analyse comportementale ARP :</strong></p>
+        <table>
+            <tr><th>Comportement</th><th>Valeur</th></tr>
+        <tr><td>Appareil uniquement visible via ARP</td><td>❌</td></tr><tr><td>Appareil semble scanner le réseau</td><td>❌</td></tr><tr><td>Appareil recherché par d'autres</td><td>❌</td></tr><tr><td>Appareil passif (pas de trafic visible, mais recherché)</td><td>❌</td></tr></table>
+        <p><strong>TCP SYN Fingerprints et système estimé :</strong></p>
+        <table>
+            <tr>
+                <th>Fingerprint</th>
+                <th>Estimation système</th>
+            </tr>
+            <tr><td colspan='2'>Aucun</td></tr>
+        </table>
+
+        <p><strong>User-Agents :</strong></p>
+        <ul><li>Aucun</li></ul>
+
+        <p><strong>Services mDNS :</strong></p>
+        <ul><li>Aucun</li></ul>
+
+        <p><strong>Noms observés :</strong></p>
+        <ul><li>Aucun</li></ul>
+
+        <p><strong>Top 10 domaines contactés :</strong></p>
+        <ul>
+            <li>Aucun</li>
+        </ul>
+
+        <p><strong>Communications TLS détectées :</strong></p>
+        <table class=table>
+            <tr><th>Destination IP</th><th>SNI</th><th>Version TLS</th></tr>
+            <tr><td colspan='3'>Aucune communication TLS détectée</td></tr>
+        </table>
+
+        <p><strong>Ports TCP détectés (protocole connu) :</strong></p>
+        <table>
+            <tr><th>Port</th><th>Protocole applicatif</th></tr>
+            <tr><td colspan='2'>Aucun port connu</td></tr>
+        </table>
+
+        <p><strong>Ports UDP détectés (protocole connu) :</strong></p>
+        <table>
+            <tr><th>Port</th><th>Protocole applicatif</th></tr>
+            <tr class='proto-known'><td>1900</td><td>UPnP</td></tr>
+        </table>
+
+        <p><strong>Ports TCP sans protocole identifié :</strong></p>
+        <ul>
+    <li>Aucun</li>
+        </ul>
+        <p><strong>Ports UDP sans protocole identifié :</strong></p>
+        <ul>
+    <li>Aucun</li>
+        </ul>
+
+        <p><strong>DHCP Info :</strong></p>
+    <p>Aucune information DHCP détectée.</p>
+    </div>
+    
+</body>
+</html>

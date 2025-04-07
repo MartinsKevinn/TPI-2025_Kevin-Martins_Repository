@@ -1,0 +1,113 @@
+{
+    "metadata": {
+        "capture_start": "2025-04-07 10:02:11",
+        "capture_end": "2025-04-07 10:02:16",
+        "capture_duration_seconds": 5.087,
+        "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
+        "source_file": "C:/TPI-2025_Kevin-Martins_Repository/TPI-2025_Kevin-Martins_Repository/src/capture/capture_20250407_100207.pcap",
+        "scapy_version": "2.6.1"
+    },
+    "devices": [
+        {
+            "mac": "c8:7f:54:df:40:b8",
+            "manufacturer": "ASUSTek COMPUTER INC.",
+            "ipv4_addresses": [
+                "15.197.213.252",
+                "104.18.32.47"
+            ],
+            "ipv6_addresses": [
+                "fe80::ca7f:54ff:fedf:40b8"
+            ],
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        59836,
+                        "Inconnu"
+                    ],
+                    [
+                        59840,
+                        "Inconnu"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_tcp": [
+                "443",
+                "59836",
+                "59840"
+            ],
+            "os_guesses_dhcp": [],
+            "device_type": "Routeur",
+            "top_domains_contacted": [],
+            "ports_udp": [],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [],
+                "acts_as_scanner": false,
+                "arp_requested_count": 0,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
+            "tcp_syn_analysis": []
+        },
+        {
+            "mac": "34:7d:f6:fe:35:fd",
+            "manufacturer": "Intel Corporate",
+            "ipv4_addresses": [
+                "172.17.122.139"
+            ],
+            "ipv6_addresses": [
+                "fe80::600c:ce15:a34c:c883"
+            ],
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        59836,
+                        "Inconnu"
+                    ],
+                    [
+                        59840,
+                        "Inconnu"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_tcp": [
+                "443",
+                "59836",
+                "59840"
+            ],
+            "os_guesses_dhcp": [],
+            "device_type": "Peu de données, donc probablement un appareil mobile (smartphone, tablette, etc.)",
+            "top_domains_contacted": [],
+            "ports_udp": [],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [],
+                "acts_as_scanner": false,
+                "arp_requested_count": 0,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
+            "tcp_syn_analysis": []
+        }
+    ]
+}

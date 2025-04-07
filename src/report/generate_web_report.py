@@ -3,16 +3,19 @@ from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog
 from collections import OrderedDict
+import sys
 
-# Fenêtre tkinter masquée
-root = tk.Tk()
-root.withdraw()
-print("📂 Sélectionnez le fichier .json à transformer")
-json_path = filedialog.askopenfilename(
-    title="Choisissez un fichier JSON",
-    filetypes=[("JSON files", "*.json"), ("Tous les fichiers", "*.*")]
-)
-
+if len(sys.argv) > 1:
+        json_path = sys.argv[1]
+else:
+    # Fenêtre tkinter masquée
+    root = tk.Tk()
+    root.withdraw()
+    print("📂 Sélectionnez le fichier .json à transformer")
+    json_path = filedialog.askopenfilename(
+        title="Choisissez un fichier JSON",
+        filetypes=[("JSON files", "*.json"), ("Tous les fichiers", "*.*")]
+    )
 if not json_path:
     print("❌ Aucun fichier sélectionné. Conversion annulée.")
     exit(1)
@@ -87,14 +90,10 @@ for device in devices:
         <table>
             <tr><th>Comportement</th><th>Valeur</th></tr>
         """
-        if arp.get("only_arp"):
-            html += "<tr><td>Appareil uniquement visible via ARP</td><td>✅</td></tr>"
-        if arp.get("acts_as_scanner"):
-            html += f"<tr><td>Appareil semble scanner le réseau</td><td>✅ ({len(arp.get('requested_ips', []))} IP ciblées)</td></tr>"
-        if arp.get("targeted_by_others"):
-            html += "<tr><td>Appareil recherché par d'autres</td><td>✅</td></tr>"
-        if arp.get("likely_passive"):
-            html += "<tr><td>Appareil passif (pas de trafic visible, mais recherché)</td><td>✅</td></tr>"
+        html += f"<tr><td>Appareil uniquement visible via ARP</td><td>{'✅' if arp.get('only_arp') else '❌'}</td></tr>"
+        html += f"<tr><td>Appareil semble scanner le réseau</td><td>{'✅' if arp.get('acts_as_scanner') else '❌'}</td></tr>"
+        html += f"<tr><td>Appareil recherché par d'autres</td><td>{'✅' if arp.get('targeted_by_others') else '❌'}</td></tr>"
+        html += f"<tr><td>Appareil passif (pas de trafic visible, mais recherché)</td><td>{'✅' if arp.get('likely_passive') else '❌'}</td></tr>"
         if arp.get("requested_ips"):
             html += "<tr><td>IP ciblées par cet appareil</td><td>" + ", ".join(arp["requested_ips"]) + "</td></tr>"
         html += "</table>"

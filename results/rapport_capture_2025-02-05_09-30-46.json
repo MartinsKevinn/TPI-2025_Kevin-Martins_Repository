@@ -3,6 +3,7 @@
         "capture_start": "2025-02-05 09:30:46",
         "capture_end": "2025-02-05 09:32:05",
         "capture_duration_seconds": 79.429,
+        "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
         "source_file": "C:/TPI-2025_Kevin-Martins_Repository/TPI-2025_Kevin-Martins_Repository/src/capture/capture.pcap",
         "scapy_version": "2.6.1"
     },
@@ -14,29 +15,432 @@
                 "172.17.121.139"
             ],
             "ipv6_addresses": [
-                "fd63:ab67:6b2:0:3565:5416:b864:3317",
-                "fe80::600c:ce15:a34c:c883"
+                "fe80::600c:ce15:a34c:c883",
+                "fd63:ab67:6b2:0:3565:5416:b864:3317"
             ],
-            "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [],
             "observed_hostnames": [],
             "tcp_syn_fingerprints": [
-                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
-                "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK"
+                "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK"
             ],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        53,
+                        "DNS"
+                    ],
+                    [
+                        80,
+                        "HTTP"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        8009,
+                        "Inconnu"
+                    ],
+                    [
+                        57683,
+                        "Inconnu"
+                    ],
+                    [
+                        57684,
+                        "Inconnu"
+                    ],
+                    [
+                        57687,
+                        "Inconnu"
+                    ],
+                    [
+                        57690,
+                        "Inconnu"
+                    ],
+                    [
+                        57692,
+                        "Inconnu"
+                    ],
+                    [
+                        57693,
+                        "Inconnu"
+                    ],
+                    [
+                        57694,
+                        "Inconnu"
+                    ],
+                    [
+                        57695,
+                        "Inconnu"
+                    ],
+                    [
+                        57696,
+                        "Inconnu"
+                    ],
+                    [
+                        57697,
+                        "Inconnu"
+                    ],
+                    [
+                        57698,
+                        "Inconnu"
+                    ],
+                    [
+                        57699,
+                        "Inconnu"
+                    ],
+                    [
+                        57700,
+                        "Inconnu"
+                    ],
+                    [
+                        57701,
+                        "Inconnu"
+                    ],
+                    [
+                        57702,
+                        "Inconnu"
+                    ],
+                    [
+                        57703,
+                        "Inconnu"
+                    ],
+                    [
+                        57704,
+                        "Inconnu"
+                    ],
+                    [
+                        57705,
+                        "Inconnu"
+                    ],
+                    [
+                        57706,
+                        "Inconnu"
+                    ],
+                    [
+                        57707,
+                        "Inconnu"
+                    ],
+                    [
+                        57708,
+                        "Inconnu"
+                    ],
+                    [
+                        57709,
+                        "Inconnu"
+                    ],
+                    [
+                        57710,
+                        "Inconnu"
+                    ],
+                    [
+                        57711,
+                        "Inconnu"
+                    ]
+                ],
+                "UDP": [
+                    [
+                        53,
+                        "DNS"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        49355,
+                        "Inconnu"
+                    ],
+                    [
+                        50118,
+                        "Inconnu"
+                    ],
+                    [
+                        50166,
+                        "Inconnu"
+                    ],
+                    [
+                        50199,
+                        "Inconnu"
+                    ],
+                    [
+                        50575,
+                        "Inconnu"
+                    ],
+                    [
+                        51224,
+                        "Inconnu"
+                    ],
+                    [
+                        51740,
+                        "Inconnu"
+                    ],
+                    [
+                        52291,
+                        "Inconnu"
+                    ],
+                    [
+                        52554,
+                        "Inconnu"
+                    ],
+                    [
+                        53574,
+                        "Inconnu"
+                    ],
+                    [
+                        53807,
+                        "Inconnu"
+                    ],
+                    [
+                        54244,
+                        "Inconnu"
+                    ],
+                    [
+                        54256,
+                        "Inconnu"
+                    ],
+                    [
+                        54586,
+                        "Inconnu"
+                    ],
+                    [
+                        55116,
+                        "Inconnu"
+                    ],
+                    [
+                        55125,
+                        "Inconnu"
+                    ],
+                    [
+                        55387,
+                        "Inconnu"
+                    ],
+                    [
+                        55899,
+                        "Inconnu"
+                    ],
+                    [
+                        56238,
+                        "Inconnu"
+                    ],
+                    [
+                        56396,
+                        "Inconnu"
+                    ],
+                    [
+                        56688,
+                        "Inconnu"
+                    ],
+                    [
+                        56819,
+                        "Inconnu"
+                    ],
+                    [
+                        56903,
+                        "Inconnu"
+                    ],
+                    [
+                        56984,
+                        "Inconnu"
+                    ],
+                    [
+                        57025,
+                        "Inconnu"
+                    ],
+                    [
+                        57264,
+                        "Inconnu"
+                    ],
+                    [
+                        57358,
+                        "Inconnu"
+                    ],
+                    [
+                        57884,
+                        "Inconnu"
+                    ],
+                    [
+                        58017,
+                        "Inconnu"
+                    ],
+                    [
+                        58039,
+                        "Inconnu"
+                    ],
+                    [
+                        58266,
+                        "Inconnu"
+                    ],
+                    [
+                        58727,
+                        "Inconnu"
+                    ],
+                    [
+                        58976,
+                        "Inconnu"
+                    ],
+                    [
+                        59095,
+                        "Inconnu"
+                    ],
+                    [
+                        59585,
+                        "Inconnu"
+                    ],
+                    [
+                        59956,
+                        "Inconnu"
+                    ],
+                    [
+                        60577,
+                        "Inconnu"
+                    ],
+                    [
+                        61048,
+                        "Inconnu"
+                    ],
+                    [
+                        61479,
+                        "Inconnu"
+                    ],
+                    [
+                        61754,
+                        "Inconnu"
+                    ],
+                    [
+                        62685,
+                        "Inconnu"
+                    ],
+                    [
+                        62725,
+                        "Inconnu"
+                    ],
+                    [
+                        62816,
+                        "Inconnu"
+                    ],
+                    [
+                        63431,
+                        "Inconnu"
+                    ],
+                    [
+                        63441,
+                        "Inconnu"
+                    ],
+                    [
+                        64039,
+                        "Inconnu"
+                    ],
+                    [
+                        64452,
+                        "Inconnu"
+                    ],
+                    [
+                        64485,
+                        "Inconnu"
+                    ],
+                    [
+                        64546,
+                        "Inconnu"
+                    ],
+                    [
+                        64867,
+                        "Inconnu"
+                    ],
+                    [
+                        65048,
+                        "Inconnu"
+                    ],
+                    [
+                        65117,
+                        "Inconnu"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_tcp": [
+                "443",
+                "57683",
+                "57684",
+                "57687",
+                "57690",
+                "57692",
+                "57693",
+                "57694",
+                "57695",
+                "57696",
+                "57697",
+                "57698",
+                "57699",
+                "57701",
+                "57702",
+                "57703",
+                "57704",
+                "57705",
+                "57706",
+                "57707",
+                "57708",
+                "57709",
+                "57711",
+                "80",
+                "8009"
+            ],
+            "ports_udp": [
+                "443",
+                "50166",
+                "51224",
+                "52554",
+                "53",
+                "55899",
+                "56984",
+                "57025",
+                "57358",
+                "58727",
+                "62685",
+                "63441",
+                "64039",
+                "64546",
+                "65048"
+            ],
+            "arp_name_fallback": "34:7d:f6:fe:35:fd",
             "arp_detected": true,
+            "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
+            "top_domains_contacted": [
+                "googleapis.com",
+                "google.com",
+                "wikimedia.org",
+                "wpad.lan",
+                "msftconnecttest.com",
+                "googlezip.net",
+                "pki.goog",
+                "gstatic.com",
+                "googleadservices.com",
+                "wikipedia.org"
+            ],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [
+                    "172.17.121.1"
+                ],
+                "acts_as_scanner": false,
+                "arp_requested_count": 1,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
             "tcp_syn_analysis": [
                 {
-                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
-                    "os_guess": "generic tunnel or VPN",
-                    "confidence": 70
+                    "fingerprint": "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "Système inconnu",
+                    "confidence": 0
                 },
                 {
-                    "fingerprint": "W:65535,MSS:1440,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
-                    "os_guess": "generic tunnel or VPN",
-                    "confidence": 70
+                    "fingerprint": "W:65535,MSS:1460,Opts:MSS-NOP-WScale-NOP-NOP-SAckOK",
+                    "os_guess": "Système inconnu",
+                    "confidence": 0
                 }
             ]
         },
@@ -47,7 +451,6 @@
                 "172.17.121.237"
             ],
             "ipv6_addresses": [],
-            "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
@@ -57,17 +460,55 @@
                 "_googlecast"
             ],
             "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        8009,
+                        "Inconnu"
+                    ],
+                    [
+                        57683,
+                        "Inconnu"
+                    ]
+                ],
+                "UDP": [
+                    [
+                        5353,
+                        "mDNS"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_tcp": [
+                "57683",
+                "8009"
+            ],
+            "ports_udp": [
+                "5353"
+            ],
+            "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
+            "top_domains_contacted": [
+                "_tcp.local"
+            ],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [],
+                "acts_as_scanner": false,
+                "arp_requested_count": 0,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
             "tcp_syn_analysis": []
         },
         {
             "mac": "8c:aa:b5:86:d5:68",
             "manufacturer": "Espressif Inc.",
             "ipv4_addresses": [
-                "0.0.0.0",
-                "172.17.121.110"
+                "172.17.121.110",
+                "0.0.0.0"
             ],
             "ipv6_addresses": [],
-            "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [
                 {
@@ -100,39 +541,461 @@
             "mdns_services": [],
             "observed_hostnames": [],
             "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "UDP": [
+                    [
+                        67,
+                        "DHCP Server"
+                    ],
+                    [
+                        68,
+                        "DHCP Client"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "arp_name_fallback": "8c:aa:b5:86:d5:68",
             "arp_detected": true,
+            "ports_udp": [
+                "67",
+                "68"
+            ],
+            "hostname_from_dhcp": "otodo_hub",
+            "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
+            "top_domains_contacted": [],
+            "ports_tcp": [],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [
+                    "172.17.121.110",
+                    "172.17.121.1"
+                ],
+                "acts_as_scanner": false,
+                "arp_requested_count": 2,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
             "tcp_syn_analysis": []
         },
         {
             "mac": "c8:7f:54:df:2a:60",
             "manufacturer": "ASUSTek COMPUTER INC.",
             "ipv4_addresses": [
-                "216.239.34.157",
+                "23.200.3.27",
+                "64.233.180.95",
+                "142.251.167.106",
                 "172.253.63.95",
+                "13.78.111.198",
                 "172.253.63.138",
                 "23.209.72.40",
-                "208.80.154.240",
-                "13.78.111.198",
-                "64.233.180.155",
-                "64.233.180.95",
-                "142.251.163.139",
-                "23.200.3.27",
+                "216.239.34.157",
                 "208.80.154.224",
-                "142.251.167.106",
+                "64.233.180.155",
                 "172.253.62.94",
+                "142.251.163.139",
+                "208.80.154.240",
                 "172.17.121.1"
             ],
             "ipv6_addresses": [
                 "fe80::ca7f:54ff:fedf:2a60",
                 "fd63:ab67:6b2::1"
             ],
-            "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [],
             "observed_hostnames": [],
             "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "UDP": [
+                    [
+                        53,
+                        "DNS"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        49355,
+                        "Inconnu"
+                    ],
+                    [
+                        50118,
+                        "Inconnu"
+                    ],
+                    [
+                        50166,
+                        "Inconnu"
+                    ],
+                    [
+                        50199,
+                        "Inconnu"
+                    ],
+                    [
+                        50575,
+                        "Inconnu"
+                    ],
+                    [
+                        51224,
+                        "Inconnu"
+                    ],
+                    [
+                        51740,
+                        "Inconnu"
+                    ],
+                    [
+                        52291,
+                        "Inconnu"
+                    ],
+                    [
+                        52554,
+                        "Inconnu"
+                    ],
+                    [
+                        53574,
+                        "Inconnu"
+                    ],
+                    [
+                        53807,
+                        "Inconnu"
+                    ],
+                    [
+                        54244,
+                        "Inconnu"
+                    ],
+                    [
+                        54256,
+                        "Inconnu"
+                    ],
+                    [
+                        54586,
+                        "Inconnu"
+                    ],
+                    [
+                        55116,
+                        "Inconnu"
+                    ],
+                    [
+                        55125,
+                        "Inconnu"
+                    ],
+                    [
+                        55387,
+                        "Inconnu"
+                    ],
+                    [
+                        55899,
+                        "Inconnu"
+                    ],
+                    [
+                        56238,
+                        "Inconnu"
+                    ],
+                    [
+                        56396,
+                        "Inconnu"
+                    ],
+                    [
+                        56688,
+                        "Inconnu"
+                    ],
+                    [
+                        56819,
+                        "Inconnu"
+                    ],
+                    [
+                        56903,
+                        "Inconnu"
+                    ],
+                    [
+                        56984,
+                        "Inconnu"
+                    ],
+                    [
+                        57025,
+                        "Inconnu"
+                    ],
+                    [
+                        57264,
+                        "Inconnu"
+                    ],
+                    [
+                        57358,
+                        "Inconnu"
+                    ],
+                    [
+                        57884,
+                        "Inconnu"
+                    ],
+                    [
+                        58017,
+                        "Inconnu"
+                    ],
+                    [
+                        58039,
+                        "Inconnu"
+                    ],
+                    [
+                        58266,
+                        "Inconnu"
+                    ],
+                    [
+                        58727,
+                        "Inconnu"
+                    ],
+                    [
+                        58976,
+                        "Inconnu"
+                    ],
+                    [
+                        59095,
+                        "Inconnu"
+                    ],
+                    [
+                        59585,
+                        "Inconnu"
+                    ],
+                    [
+                        59956,
+                        "Inconnu"
+                    ],
+                    [
+                        60577,
+                        "Inconnu"
+                    ],
+                    [
+                        61048,
+                        "Inconnu"
+                    ],
+                    [
+                        61479,
+                        "Inconnu"
+                    ],
+                    [
+                        61754,
+                        "Inconnu"
+                    ],
+                    [
+                        62685,
+                        "Inconnu"
+                    ],
+                    [
+                        62725,
+                        "Inconnu"
+                    ],
+                    [
+                        62816,
+                        "Inconnu"
+                    ],
+                    [
+                        63431,
+                        "Inconnu"
+                    ],
+                    [
+                        63441,
+                        "Inconnu"
+                    ],
+                    [
+                        64039,
+                        "Inconnu"
+                    ],
+                    [
+                        64452,
+                        "Inconnu"
+                    ],
+                    [
+                        64485,
+                        "Inconnu"
+                    ],
+                    [
+                        64546,
+                        "Inconnu"
+                    ],
+                    [
+                        64867,
+                        "Inconnu"
+                    ],
+                    [
+                        65048,
+                        "Inconnu"
+                    ],
+                    [
+                        65117,
+                        "Inconnu"
+                    ]
+                ],
+                "TCP": [
+                    [
+                        53,
+                        "DNS"
+                    ],
+                    [
+                        80,
+                        "HTTP"
+                    ],
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        57687,
+                        "Inconnu"
+                    ],
+                    [
+                        57690,
+                        "Inconnu"
+                    ],
+                    [
+                        57692,
+                        "Inconnu"
+                    ],
+                    [
+                        57693,
+                        "Inconnu"
+                    ],
+                    [
+                        57694,
+                        "Inconnu"
+                    ],
+                    [
+                        57695,
+                        "Inconnu"
+                    ],
+                    [
+                        57696,
+                        "Inconnu"
+                    ],
+                    [
+                        57697,
+                        "Inconnu"
+                    ],
+                    [
+                        57698,
+                        "Inconnu"
+                    ],
+                    [
+                        57699,
+                        "Inconnu"
+                    ],
+                    [
+                        57700,
+                        "Inconnu"
+                    ],
+                    [
+                        57701,
+                        "Inconnu"
+                    ],
+                    [
+                        57702,
+                        "Inconnu"
+                    ],
+                    [
+                        57703,
+                        "Inconnu"
+                    ],
+                    [
+                        57704,
+                        "Inconnu"
+                    ],
+                    [
+                        57705,
+                        "Inconnu"
+                    ],
+                    [
+                        57706,
+                        "Inconnu"
+                    ],
+                    [
+                        57707,
+                        "Inconnu"
+                    ],
+                    [
+                        57708,
+                        "Inconnu"
+                    ],
+                    [
+                        57709,
+                        "Inconnu"
+                    ],
+                    [
+                        57710,
+                        "Inconnu"
+                    ],
+                    [
+                        57711,
+                        "Inconnu"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_udp": [
+                "443",
+                "50166",
+                "51224",
+                "52554",
+                "53",
+                "55899",
+                "56984",
+                "57025",
+                "57358",
+                "58727",
+                "62685",
+                "63441",
+                "64039",
+                "64546",
+                "65048"
+            ],
+            "ports_tcp": [
+                "443",
+                "57687",
+                "57690",
+                "57692",
+                "57693",
+                "57694",
+                "57695",
+                "57696",
+                "57697",
+                "57698",
+                "57699",
+                "57701",
+                "57702",
+                "57703",
+                "57704",
+                "57705",
+                "57706",
+                "57707",
+                "57708",
+                "57709",
+                "57711",
+                "80"
+            ],
+            "arp_name_fallback": "c8:7f:54:df:2a:60",
             "arp_detected": true,
+            "os_guesses_dhcp": [],
+            "device_type": "Routeur",
+            "top_domains_contacted": [
+                "googleapis.com",
+                "google.com",
+                "wikimedia.org",
+                "wpad.lan",
+                "msftconnecttest.com",
+                "googlezip.net",
+                "pki.goog",
+                "gstatic.com",
+                "googleadservices.com",
+                "wikipedia.org"
+            ],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [
+                    "172.17.121.139"
+                ],
+                "acts_as_scanner": false,
+                "arp_requested_count": 1,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
             "tcp_syn_analysis": []
         },
         {
@@ -144,7 +1007,6 @@
             "ipv6_addresses": [
                 "fe80::d6f5:47ff:fe1d:adc8"
             ],
-            "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
@@ -156,6 +1018,60 @@
                 "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2"
             ],
             "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        8009,
+                        "Inconnu"
+                    ],
+                    [
+                        57684,
+                        "Inconnu"
+                    ]
+                ],
+                "UDP": [
+                    [
+                        5353,
+                        "mDNS"
+                    ],
+                    [
+                        9478,
+                        "Inconnu"
+                    ],
+                    [
+                        9487,
+                        "Inconnu"
+                    ],
+                    [
+                        9999,
+                        "Urchin Analytics"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_tcp": [
+                "57684",
+                "8009"
+            ],
+            "ports_udp": [
+                "5353",
+                "9478",
+                "9487",
+                "9999"
+            ],
+            "os_guesses_dhcp": [],
+            "device_type": "Inconnu",
+            "top_domains_contacted": [
+                "_tcp.local"
+            ],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [],
+                "acts_as_scanner": false,
+                "arp_requested_count": 0,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
             "tcp_syn_analysis": []
         },
         {
@@ -165,12 +1081,35 @@
                 "172.17.121.211"
             ],
             "ipv6_addresses": [],
-            "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [],
             "observed_hostnames": [],
             "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "UDP": [
+                    [
+                        1900,
+                        "UPnP"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_udp": [
+                "1900"
+            ],
+            "os_guesses_dhcp": [],
+            "device_type": "Probablement une TV connectée",
+            "top_domains_contacted": [],
+            "ports_tcp": [],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [],
+                "acts_as_scanner": false,
+                "arp_requested_count": 0,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
             "tcp_syn_analysis": []
         },
         {
@@ -180,13 +1119,30 @@
                 "172.17.121.176"
             ],
             "ipv6_addresses": [],
-            "possible_type": null,
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [],
             "observed_hostnames": [],
             "tcp_syn_fingerprints": [],
+            "protocols_ports": {},
+            "arp_observations": [],
+            "arp_name_fallback": "3c:a3:08:7a:84:bd",
             "arp_detected": true,
+            "os_guesses_dhcp": [],
+            "device_type": "Peu de données, donc probablement un appareil mobile (smartphone, tablette, etc.)",
+            "top_domains_contacted": [],
+            "ports_tcp": [],
+            "ports_udp": [],
+            "arp_analysis": {
+                "only_arp": true,
+                "requested_ips": [
+                    "172.17.121.176"
+                ],
+                "acts_as_scanner": false,
+                "arp_requested_count": 1,
+                "targeted_by_others": false,
+                "likely_passive": true
+            },
             "tcp_syn_analysis": []
         }
     ]
