@@ -1,0 +1,60 @@
+{
+    "metadata": {
+        "capture_start": "2025-04-07 11:39:02",
+        "capture_end": "2025-04-07 11:39:02",
+        "capture_duration_seconds": 0.137,
+        "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
+        "source_file": "src\\capture\\capture_20250407_113901.pcap",
+        "scapy_version": "2.6.1"
+    },
+    "devices": [
+        {
+            "mac": "34:7d:f6:fe:35:fd",
+            "manufacturer": "Intel Corporate",
+            "ipv4_addresses": [
+                "172.17.122.139"
+            ],
+            "ipv6_addresses": [],
+            "http_user_agents": [],
+            "dhcp_info": [],
+            "mdns_services": [],
+            "observed_hostnames": [],
+            "tcp_syn_fingerprints": [],
+            "protocols_ports": {
+                "TCP": [
+                    [
+                        443,
+                        "HTTPS"
+                    ],
+                    [
+                        61304,
+                        "Inconnu"
+                    ],
+                    [
+                        61330,
+                        "Inconnu"
+                    ]
+                ]
+            },
+            "arp_observations": [],
+            "ports_tcp": [
+                "443",
+                "61304",
+                "61330"
+            ],
+            "os_guesses_dhcp": [],
+            "device_type": "Peu de données, donc probablement un appareil mobile (smartphone, tablette, etc.)",
+            "top_domains_contacted": [],
+            "ports_udp": [],
+            "arp_analysis": {
+                "only_arp": false,
+                "requested_ips": [],
+                "acts_as_scanner": false,
+                "arp_requested_count": 0,
+                "targeted_by_others": false,
+                "likely_passive": false
+            },
+            "tcp_syn_analysis": []
+        }
+    ]
+}

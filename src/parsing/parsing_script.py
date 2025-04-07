@@ -95,6 +95,7 @@ def guess_device_type(device):
 
 def parse_pcap(file_path, oui_db):
     packets = rdpcap(file_path)
+    used_packets = 0
 
     if packets:
         start_ts = float(packets[0].time)
@@ -111,6 +112,14 @@ def parse_pcap(file_path, oui_db):
 
     for pkt in packets:
         src_mac = pkt.src if hasattr(pkt, 'src') else None
+        
+        #incrémentation de used_packets si un paquet correspond à ceux qui vont être analysés
+        if (
+            pkt.haslayer(DHCP) or pkt.haslayer(ARP) or pkt.haslayer(DNS) or
+            pkt.haslayer(Raw) or pkt.haslayer(TCP) or pkt.haslayer(UDP)
+        ):
+            used_packets += 1
+
 
         if src_mac:
             if src_mac not in devices_by_mac:
@@ -357,7 +366,6 @@ def parse_pcap(file_path, oui_db):
             if pkt.haslayer(ARP):
                 src_mac = pkt[ARP].hwsrc
                 dst_ip = pkt[ARP].pdst
-                src_ip = pkt[ARP].psrc
 
                 # Enregistrement des IP ciblées par ce MAC
                 if src_mac not in arp_requests_by_mac:
@@ -442,6 +450,8 @@ def parse_pcap(file_path, oui_db):
             "capture_end": capture_end_str,
             "capture_duration_seconds": duration,
             "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
+            "packet_count": len(packets),
+            "used_packets": used_packets,
             "source_file": file_path,
             "scapy_version": scapy.__version__
         },
@@ -476,7 +486,7 @@ if __name__ == "__main__":
 
     if choice == "y":
         try:
-            print("🧩 Génération du rapport HTML en cours...")
+            print("\n🧩 Génération du rapport HTML en cours...")
             subprocess.run(["python", "src/report/generate_web_report.py", output_file], check=True)
         except subprocess.CalledProcessError as e:
             print(f"❌ Erreur lors de la génération HTML : {e}")

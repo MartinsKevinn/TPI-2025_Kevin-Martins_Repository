@@ -4,6 +4,8 @@
         "capture_end": "2025-02-05 09:32:05",
         "capture_duration_seconds": 79.429,
         "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
+        "packet_count": 2721,
+        "used_packets": 2705,
         "source_file": "C:/TPI-2025_Kevin-Martins_Repository/TPI-2025_Kevin-Martins_Repository/src/capture/capture.pcap",
         "scapy_version": "2.6.1"
     },
@@ -15,8 +17,8 @@
                 "172.17.121.139"
             ],
             "ipv6_addresses": [
-                "fe80::600c:ce15:a34c:c883",
-                "fd63:ab67:6b2:0:3565:5416:b864:3317"
+                "fd63:ab67:6b2:0:3565:5416:b864:3317",
+                "fe80::600c:ce15:a34c:c883"
             ],
             "http_user_agents": [],
             "dhcp_info": [],
@@ -505,8 +507,8 @@
             "mac": "8c:aa:b5:86:d5:68",
             "manufacturer": "Espressif Inc.",
             "ipv4_addresses": [
-                "172.17.121.110",
-                "0.0.0.0"
+                "0.0.0.0",
+                "172.17.121.110"
             ],
             "ipv6_addresses": [],
             "http_user_agents": [],
@@ -568,8 +570,8 @@
             "arp_analysis": {
                 "only_arp": false,
                 "requested_ips": [
-                    "172.17.121.110",
-                    "172.17.121.1"
+                    "172.17.121.1",
+                    "172.17.121.110"
                 ],
                 "acts_as_scanner": false,
                 "arp_requested_count": 2,
@@ -582,20 +584,20 @@
             "mac": "c8:7f:54:df:2a:60",
             "manufacturer": "ASUSTek COMPUTER INC.",
             "ipv4_addresses": [
-                "23.200.3.27",
-                "64.233.180.95",
-                "142.251.167.106",
-                "172.253.63.95",
-                "13.78.111.198",
-                "172.253.63.138",
                 "23.209.72.40",
-                "216.239.34.157",
-                "208.80.154.224",
+                "172.253.63.95",
                 "64.233.180.155",
                 "172.253.62.94",
+                "64.233.180.95",
+                "23.200.3.27",
+                "208.80.154.224",
+                "172.17.121.1",
                 "142.251.163.139",
                 "208.80.154.240",
-                "172.17.121.1"
+                "142.251.167.106",
+                "216.239.34.157",
+                "13.78.111.198",
+                "172.253.63.138"
             ],
             "ipv6_addresses": [
                 "fe80::ca7f:54ff:fedf:2a60",
@@ -1010,8 +1012,8 @@
             "http_user_agents": [],
             "dhcp_info": [],
             "mdns_services": [
-                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local.",
-                "_googlecast._tcp.local."
+                "_googlecast._tcp.local.",
+                "shield-android-tv-308e3ee335aa459ceaf670edf0bbc0a2._googlecast._tcp.local."
             ],
             "observed_hostnames": [
                 "_googlecast",

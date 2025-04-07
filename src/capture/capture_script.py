@@ -64,7 +64,7 @@ if __name__ == "__main__":
 choice = input("Souhaitez-vous lancer l'analyse du fichier capturé maintenant ? (y/n) : ").strip().lower()
 
 if choice == "y":
-    print("\n🔍 Lancement de l'analyse...")
+    print("🔍 Lancement de l'analyse...")
     try:
         subprocess.run(["python", "src/parsing/parsing_script.py", output_file], check=True)
     except subprocess.CalledProcessError as e:

@@ -455,62 +455,62 @@
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,1460,1024,0,mss,,0",
+    "pattern": ".*,64\\-,0,1460,1024,0,mss,,0",
     "os": "SYN scan",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,1460,2048,0,mss,,0",
+    "pattern": ".*,64\\-,0,1460,2048,0,mss,,0",
     "os": "SYN scan",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,1460,3072,0,mss,,0",
+    "pattern": ".*,64\\-,0,1460,3072,0,mss,,0",
     "os": "SYN scan",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,1460,4096,0,mss,,0",
+    "pattern": ".*,64\\-,0,1460,4096,0,mss,,0",
     "os": "SYN scan",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,265,512,0,mss,sok,ts,ack+,0",
+    "pattern": ".*,64\\-,0,265,512,0,mss,sok,ts,ack+,0",
     "os": "OS detection",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,0,4,10,sok,ts,ws,eol+0,ack+,0",
+    "pattern": ".*,64\\-,0,0,4,10,sok,ts,ws,eol+0,ack+,0",
     "os": "OS detection",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,1460,1,10,ws,nop,mss,ts,sok,ack+,0",
+    "pattern": ".*,64\\-,0,1460,1,10,ws,nop,mss,ts,sok,ack+,0",
     "os": "OS detection",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,536,16,10,mss,sok,ts,ws,eol+0,ack+,0",
+    "pattern": ".*,64\\-,0,536,16,10,mss,sok,ts,ws,eol+0,ack+,0",
     "os": "OS detection",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,640,4,5,ts,nop,nop,ws,nop,mss,ack+,0",
+    "pattern": ".*,64\\-,0,640,4,5,ts,nop,nop,ws,nop,mss,ack+,0",
     "os": "OS detection",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,1400,63,0,mss,ws,sok,ts,eol+0,ack+,0",
+    "pattern": ".*,64\\-,0,1400,63,0,mss,ws,sok,ts,eol+0,ack+,0",
     "os": "OS detection",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,265,31337,10,ws,nop,mss,ts,sok,ack+,0",
+    "pattern": ".*,64\\-,0,265,31337,10,ws,nop,mss,ts,sok,ack+,0",
     "os": "OS detection",
     "confidence": 70
   },
   {
-    "pattern": ".*,64-,0,1460,3,10,ws,nop,mss,sok,nop,nop,ecn,uptr+,0",
+    "pattern": ".*,64\\-,0,1460,3,10,ws,nop,mss,sok,nop,nop,ecn,uptr+,0",
     "os": "OS detection",
     "confidence": 70
   },
@@ -695,7 +695,7 @@
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,65535,0,mss,nop,nop,ts,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,65535,0,mss,nop,nop,ts,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
@@ -705,17 +705,17 @@
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,65535,0,mss,nop,ws,nop,nop,ts,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,65535,0,mss,nop,ws,nop,nop,ts,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,65535,0,mss,nop,nop,ts,nop,nop,sok,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,65535,0,mss,nop,nop,ts,nop,nop,sok,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,65535,0,mss,nop,ws,nop,nop,ts,nop,nop,sok,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,65535,0,mss,nop,ws,nop,nop,ts,nop,nop,sok,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
@@ -735,7 +735,7 @@
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,16384,0,mss,nop,nop,ts,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,16384,0,mss,nop,nop,ts,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
@@ -745,17 +745,17 @@
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,16384,0,mss,nop,ws,nop,nop,ts,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,16384,0,mss,nop,ws,nop,nop,ts,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,16384,0,mss,nop,nop,ts,nop,nop,sok,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,16384,0,mss,nop,nop,ts,nop,nop,sok,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
   {
-    "pattern": ".*,128,0,.*,16384,0,mss,nop,ws,nop,nop,ts,nop,nop,sok,df,id+,ts1-,0",
+    "pattern": ".*,128,0,.*,16384,0,mss,nop,ws,nop,nop,ts,nop,nop,sok,df,id+,ts1\\-,0",
     "os": "XP",
     "confidence": 70
   },
@@ -1085,187 +1085,487 @@
     "confidence": 70
   },
   {
-    "pattern": "0,host,user-agent,connection=[close],accept,accept-encoding,accept-language,accept-charset,cfnetwork/",
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip,deflate],accept\\-charset=[utf\\-8;q=0.7,.*;q=0.7],keep\\-alive=[300],connection=[keep\\-alive],,firefox/",
+    "os": "2.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip,deflate],accept\\-charset=[utf\\-8;q=0.7,.*;q=0.7],keep\\-alive=[115],connection=[keep\\-alive],?referer,,firefox/",
+    "os": "3.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip, deflate],accept\\-charset=[utf\\-8;q=0.7,.*;q=0.7],keep\\-alive=[115],connection=[keep\\-alive],?referer,,firefox/",
+    "os": "4.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip, deflate],accept\\-charset=[utf\\-8;q=0.7,.*;q=0.7],?dnt=[1],connection=[keep\\-alive],?referer,keep\\-alive,firefox/",
+    "os": "5.x-9.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip, deflate],accept\\-charset=[utf\\-8,.*],?dnt=[1],connection=[keep\\-alive],?referer,keep\\-alive,firefox/",
+    "os": "5.x-9.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip, deflate],accept\\-charset=[utf\\-8,.*],?dnt=[1],?referer,connection=[keep\\-alive],keep\\-alive,firefox/",
+    "os": "5.x-9.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip, deflate],accept\\-charset=[utf\\-8;q=0.7,.*;q=0.7],?dnt=[1],?referer,connection=[keep\\-alive],keep\\-alive,firefox/",
+    "os": "5.x-9.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language,accept\\-encoding=[gzip, deflate],accept\\-charset=[utf\\-8;q=0.7,.*;q=0.7],?referer,?dnt=[1],connection=[keep\\-alive],keep\\-alive,firefox/",
+    "os": "5.x-9.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language=[;q=],accept\\-encoding=[gzip, deflate],?dnt=[1],connection=[keep\\-alive],?referer,accept\\-charset,keep\\-alive,firefox/",
+    "os": "10.x or newer",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[,.*/.*;q=],?accept\\-language=[;q=],accept\\-encoding=[gzip, deflate],?dnt=[1],?referer,connection=[keep\\-alive],accept\\-charset,keep\\-alive,firefox/",
+    "os": "10.x or newer",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,host,user\\-agent,accept=[xml;q=0.9,.*/.*;q=0.8],accept\\-language,accept\\-encoding=[gzip, deflate],connection=[keep\\-alive],keep\\-alive,accept\\-charset,dnt,referer,gecko",
+    "os": "10.x or Safari 5.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,accept=[.*/.*],?referer,?accept\\-language,user\\-agent,accept\\-encoding=[gzip, deflate],host,connection=[keep\\-alive],keep\\-alive,accept\\-charset,ua\\-cpu,trident/",
+    "os": "8 or newer",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],user\\-agent,accept=[.*/.*],?referer,accept\\-encoding=[gzip,deflate,sdch],accept\\-language,accept\\-charset=[utf\\-8;q=0.7,.*;q=0.3],, chrom",
+    "os": "11.x to 26.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],user\\-agent,accept=[.*/.*],?referer,accept\\-encoding=[gzip,deflate,sdch],accept\\-language,accept\\-charset=[utf\\-8,.*;q=0.5],, chrom",
+    "os": "11.x to 26.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,user\\-agent,accept=[.*/.*],?referer,accept\\-encoding=[gzip,deflate,sdch],accept\\-language,accept\\-charset=[utf\\-8;q=0.7,.*;q=0.3],connection=[keep\\-alive],,chrom",
+    "os": "11.x to 26.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[.*/.*],user\\-agent,?referer,accept\\-encoding=[gzip,deflate,sdch],accept\\-language,accept\\-charset,keep\\-alive, chrom",
+    "os": "27.x to 42.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[.*/.*],user\\-agent,?referer,accept\\-encoding=[gzip, deflate, sdch],accept\\-language,accept\\-charset,keep\\-alive, chrom",
+    "os": "43.x or 50.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],upgrade\\-insecure\\-requests=[1],user\\-agent,accept=[.*/.*],accept\\-encoding=[gzip, deflate, sdch],accept\\-language,accept\\-charset,keep\\-alive, chrom",
+    "os": "51.x or newer",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[.*/.*;q=0.8],user\\-agent,accept\\-encoding=[gzip,deflate,lzma,sdch],accept\\-language=[;q=0.],accept\\-charset,keep\\-alive,opr/",
+    "os": "19.x or newer",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[.*/.*;q=0.8],user\\-agent,accept\\-encoding=[gzip, deflate],accept\\-language=[;q=0.],accept\\-charset,keep\\-alive,opr/",
+    "os": "15.x-18.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*/.*;q=0.1],accept\\-language=[;q=0.],accept\\-charset=[utf\\-8, utf\\-16, .*;q=0.1],accept\\-encoding=[deflate, gzip, x\\-gzip, identity, .*;q=0],connection=[keep\\-alive],,presto/",
+    "os": "10.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*/.*;q=0.1],accept\\-language=[en],accept\\-encoding=[gzip, deflate],connection=[keep\\-alive],accept\\-charset,opera/",
+    "os": "10.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*/.*;q=0.1],accept\\-language=[;q=0.],accept\\-encoding=[gzip, deflate],connection=[keep\\-alive],x\\-operamini\\-phone\\-ua,x\\-operamini\\-features,x\\-operamini\\-phone,x\\-forwarded\\-for,accept\\-charset,opera mini/",
+    "os": "Mini",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*/.*;q=0.1],accept\\-language=[en],accept\\-charset=[iso\\-8859\\-1, utf\\-8, utf\\-16, .*;q=0.1],accept\\-encoding=[deflate, gzip, x\\-gzip, identity, .*;q=0],connection=[keep\\-alive],,nintendo",
+    "os": "on Nintendo Wii",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,accept\\-encoding=[gzip],accept\\-language,user\\-agent,accept=[,.*/.*;q=0.5],accept\\-charset=[utf\\-16, .*;q=0.7],connection,android",
+    "os": "2.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept\\-encoding=[gzip],accept\\-language,user\\-agent,accept=[,.*/.*;q=0.5],accept\\-charset=[utf\\-16, .*;q=0.7],,android",
+    "os": "2.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,accept\\-encoding=[gzip],accept\\-language=[en\\-us],accept=[.*/.*;q=0.5],user\\-agent,accept\\-charset=[utf\\-16, .*;q=0.7],connection,android",
+    "os": "2.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[,.*/.*;q=0.8],user\\-agent,accept\\-encoding=[gzip,deflate],accept\\-language,accept\\-charset=[utf\\-16, .*;q=0.7],,android",
+    "os": "4.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "0,host,user\\-agent,connection=[close],accept,accept\\-encoding,accept\\-language,accept\\-charset,cfnetwork/",
     "os": "5.0 or earlier",
     "confidence": 70
   },
   {
-    "pattern": "1,host,connection=[close],user-agent,accept=[.*/.*],accept-encoding,accept-language,accept-charset,baiduspider-image",
+    "pattern": "1,host,connection=[keep\\-alive],user\\-agent,?pragma,?cache\\-control,accept=[.*/.*],accept\\-encoding=[x\\-gzip, x\\-deflate, gzip, deflate],accept\\-charset=[;q=0.5, .*;q=0.5],accept\\-language,,konqueror/",
+    "os": "4.6 or earlier",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],user\\-agent,accept=[.*/.*],accept\\-encoding=[gzip, deflate, x\\-gzip, x\\-deflate],accept\\-charset=[,.*;q=0.5],accept\\-language,,konqueror/",
+    "os": "4.7 or newer",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[close],user\\-agent,accept=[.*/.*],accept\\-encoding,accept\\-language,accept\\-charset,baiduspider\\-image",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,host,connection=[close],user-agent,accept-language=[tr-tr],accept-encoding=[gzip],accept=[.*/.*],accept-charset,baiduspider",
+    "pattern": "1,host,accept\\-language=[zh\\-cn],connection=[close],user\\-agent,accept,accept\\-encoding,accept\\-charset,baiduspider",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,host,connection=[close],user-agent,accept-encoding=[gzip],accept-language=[tr-tr],accept=[.*/.*],accept-charset,baiduspider",
+    "pattern": "1,host,connection=[close],user\\-agent,accept\\-language=[zh\\-cn,zh\\-tw],accept\\-encoding=[gzip],accept=[.*/.*],accept\\-charset,baiduspider",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,user-agent,?x-shindig-dos=[on],cache-control,host,?x-forwarded-for,accept-encoding=[gzip],?accept-language,connection,accept,accept-charset,feedfetcher-google",
+    "pattern": "1,host,connection=[close],user\\-agent,accept\\-language=[tr\\-tr],accept\\-encoding=[gzip],accept=[.*/.*],accept\\-charset,baiduspider",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[close],user\\-agent,accept\\-encoding=[gzip],?accept\\-language=[zh\\-cn,zh\\-tw],accept=[.*/.*],accept\\-charset,baiduspider",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[close],user\\-agent,accept\\-encoding=[gzip],accept\\-language=[tr\\-tr],accept=[.*/.*],accept\\-charset,baiduspider",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[.*/.*],from=[googlebot(at)googlebot.com],user\\-agent,accept\\-encoding=[gzip,deflate],?if\\-modified\\-since,accept\\-language,accept\\-charset,googlebot",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[text/plain],accept=[text/html],from=[googlebot(at)googlebot.com],user\\-agent,accept\\-encoding=[gzip,deflate],accept\\-language,accept\\-charset,googlebot",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[.*/.*],user\\-agent,accept\\-encoding=[gzip,deflate],?if\\-modified\\-since,accept\\-language,accept\\-charset,\\-google",
     "os": "feed fetcher",
     "confidence": 70
   },
   {
-    "pattern": "1,connection=[close],accept,accept-encoding=[gzip, deflate],from=[msnbot(at)microsoft.com],host,user-agent,accept-language,accept-charset,msnbot",
+    "pattern": "1,user\\-agent,?x\\-shindig\\-dos=[on],cache\\-control,host,?x\\-forwarded\\-for,accept\\-encoding=[gzip],?accept\\-language,connection,accept,accept\\-charset,feedfetcher\\-google",
+    "os": "feed fetcher",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,cache\\-control,connection=[keep\\-alive],pragma=[no\\-cache],accept=[.*/.*],accept\\-encoding,host,user\\-agent,accept\\-language,accept\\-charset,bingbot/",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,accept-language=[en-us,en;q=0.5],accept-encoding=[gzip],accept=[;q=0.9,.*/.*;q=0.8],user-agent,host,user-agent,connection,accept-encoding,accept-language,accept-charset,flipboardproxy",
+    "pattern": "1,connection=[close],accept,accept\\-encoding=[gzip, deflate],from=[msnbot(at)microsoft.com],host,user\\-agent,accept\\-language,accept\\-charset,msnbot",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,connection=[keep\\-alive],accept=[.*/.*],accept\\-encoding=[gzip,deflate],accept\\-language=[en\\-us, en;q=0.7, .*;q=0.01],user\\-agent,from=[support@search.yandex.ru],accept\\-charset,yandexbot/",
     "os": "crawler",
     "confidence": 70
   },
   {
-    "pattern": "1,user-agent,accept-encoding=[gzip],host,accept=[.*; q=.2, .*/.*; q=.2],connection=[close],accept-language,accept-charset,spinn3r",
+    "pattern": "1,host,connection=[keep\\-alive],accept=[image/jpeg, image/pjpeg, image/png, image/gif],user\\-agent,from=[support@search.yandex.ru],accept\\-encoding,accept\\-language,accept\\-charset,yandeximages/",
     "os": "crawler",
     "confidence": 70
   },
   {
-    "pattern": "1,user-agent,host,accept=[.*/.*],accept-encoding=[deflate, gzip],connection=[close],accept-language,accept-charset,facebookexternalhit/",
+    "pattern": "1,host,connection=[keep\\-alive],user\\-agent,from=[support@search.yandex.ru],accept,accept\\-encoding,accept\\-language,accept\\-charset,yandexbot/",
     "os": "crawler",
     "confidence": 70
   },
   {
-    "pattern": "1,user-agent,host,accept=[.*/.*],connection=[close],accept-encoding,accept-language,accept-charset,facebookexternalhit/",
+    "pattern": "0,host,user\\-agent,accept=[,image/png,.*/.*;q=0.5],accept\\-language=[en\\-us,en;q=0.5],accept\\-encoding=[gzip],accept\\-charset=[,utf\\-8;q=0.7,.*;q=0.7],connection,slurp",
     "os": "crawler",
     "confidence": 70
   },
   {
-    "pattern": "1,accept-encoding=[identity;q=0.5, .*;q=0.1],user-agent,host,connection,accept,accept-language,accept-charset,yodaobot/",
-    "os": "",
-    "confidence": 70
-  },
-  {
-    "pattern": "0,user-agent,connection=[close],accept=[application/xml;q=0.9,.*/.*;q=0.8],host,accept-encoding,accept-language,accept-charset,archive.org",
+    "pattern": "1,user\\-agent,accept\\-language=[en\\-us,en;q=0.5],accept\\-charset=[;q=0.7,.*;q=0.5],accept\\-encoding=[gzip],host,accept=[.*; q=.2, .*/.*; q=.2],connection=[keep\\-alive],,flipboardproxy",
     "os": "crawler",
     "confidence": 70
   },
   {
-    "pattern": "1,client-ip,x-forwarded-for,x-yql-depth,user-agent,host,via,connection,accept,accept-encoding,accept-language,accept-charset,yahoo pipes",
+    "pattern": "1,accept\\-language=[en\\-us,en;q=0.5],accept\\-encoding=[gzip],accept=[;q=0.9,.*/.*;q=0.8],user\\-agent,host,user\\-agent,connection,accept\\-encoding,accept\\-language,accept\\-charset,flipboardproxy",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,accept\\-encoding=[gzip],host,accept=[.*; q=.2, .*/.*; q=.2],connection=[close],accept\\-language,accept\\-charset,spinn3r",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*/.*],accept\\-encoding=[deflate, gzip],connection=[close],accept\\-language,accept\\-charset,facebookexternalhit/",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*/.*],connection=[close],accept\\-encoding,accept\\-language,accept\\-charset,facebookexternalhit/",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,accept\\-language=[en\\-us,en;q=0.5],accept=[.*/.*],user\\-agent,connection=[close],accept\\-encoding=[gzip,identity],?referer,host,accept\\-charset=[iso\\-8859\\-1,utf\\-8;q=0.7,.*;q=0.7],,paperlibot/",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent=[twitterbot/],host,accept=[.*; q=.2, .*/.*; q=.2],cache\\-control,connection=[keep\\-alive],accept\\-encoding,accept\\-language,accept\\-charset,twitterbot/",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "0,host,connection=[keep\\-alive],user\\-agent,accept\\-encoding=[gzip,deflate],accept,accept\\-language,accept\\-charset,linkdex.com/",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,accept\\-encoding=[identity;q=0.5, .*;q=0.1],user\\-agent,host,connection,accept,accept\\-language,accept\\-charset,yodaobot/",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,referer,user-agent,accept-encoding=[gzip,deflate],host,x-forwarded-for,connection,accept,accept-language,accept-charset,web preview",
+    "pattern": "1,host,user\\-agent,accept=[,image/png,.*/.*;q=0.5],accept\\-language=[en\\-gb,en;q=0.5],accept\\-charset=[iso\\-8859\\-1,utf\\-8;q=0.7,.*;q=0.7],connection,accept\\-encoding,tweetmemebot/",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "0,user\\-agent,connection=[close],accept=[application/xml;q=0.9,.*/.*;q=0.8],host,accept\\-encoding,accept\\-language,accept\\-charset,archive.org",
+    "os": "crawler",
+    "confidence": 70
+  },
+  {
+    "pattern": "0,client\\-ip,x\\-forwarded\\-for,x\\-yql\\-depth,user\\-agent,host,connection=[keep\\-alive],via,accept,accept\\-encoding,accept\\-language,accept\\-charset,yahoo pipes",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "0,host,accept=[text/sgml, .*/.*;q=0.01],accept-encoding=[gzip, compress],accept-language,user-agent,connection,accept-charset,lynx/",
+    "pattern": "1,client\\-ip,x\\-forwarded\\-for,x\\-yql\\-depth,user\\-agent,host,via,connection,accept,accept\\-encoding,accept\\-language,accept\\-charset,yahoo pipes",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,user-agent,host,accept=[.*/.*],connection,accept-encoding,accept-language,accept-charset,curl/",
+    "pattern": "1,referer,user\\-agent,accept\\-encoding=[gzip,deflate],host,x\\-forwarded\\-for,connection,accept,accept\\-language,accept\\-charset,web preview",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,host,user-agent,accept=[.*/.*],accept-encoding=[bzip2, deflate, gzip],accept-language,connection,accept-charset,elinks/",
+    "pattern": ".*,user\\-agent,accept=[.*/.*],host,connection=[keep\\-alive],accept\\-encoding,accept\\-language,accept\\-charset,wget/",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,accept-encoding=[identity],host,connection=[close],user-agent,accept,accept-language,accept-charset,python-urllib/",
+    "pattern": "0,host,accept=[text/sgml, .*/.*;q=0.01],accept\\-encoding=[gzip, compress],accept\\-language,user\\-agent,connection,accept\\-charset,lynx/",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*/.*],connection,accept\\-encoding,accept\\-language,accept\\-charset,curl/",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,user\\-agent,accept=[.*/.*],accept\\-encoding=[gzip, deflate, bzip2],accept\\-charset=[us\\-ascii],accept\\-language=[;q=0.1],connection=[keep\\-alive],,links",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,user\\-agent,accept=[.*/.*],accept\\-encoding=[gzip,deflate,bzip2],accept\\-charset=[us\\-ascii],accept\\-language=[;q=0.1],connection=[keep\\-alive],,links",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,user\\-agent,accept=[.*/.*],accept\\-encoding=[bzip2, deflate, gzip],accept\\-language,connection,accept\\-charset,elinks/",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,user\\-agent,host,accept=[.*; q=.2, .*/.*; q=.2],connection=[keep\\-alive],accept\\-encoding,accept\\-language,accept\\-charset,java/",
+    "os": "JRE",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,accept\\-encoding=[identity],host,connection=[close],user\\-agent,accept,accept\\-language,accept\\-charset,python\\-urllib/",
     "os": "urllib",
     "confidence": 70
   },
   {
-    "pattern": "0,user-agent,accept=[image/.*],accept-encoding=[gzip, compress, bzip, bzip2, deflate],accept-language=[;q=1.0],host,connection,accept-charset,w3m/",
+    "pattern": "0,user\\-agent,accept=[image/.*],accept\\-encoding=[gzip, compress, bzip, bzip2, deflate],accept\\-language=[;q=1.0],host,connection,accept\\-charset,w3m/",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,host,user-agent,connection=[close],accept,accept-encoding,accept-language,accept-charset,libfetch/",
+    "pattern": "1,host,user\\-agent,connection=[close],accept,accept\\-encoding,accept\\-language,accept\\-charset,libfetch/",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,user-agent,host,accept-encoding=[gzip],connection,accept,accept-language,accept-charset,appengine-google",
+    "pattern": "1,user\\-agent,host,accept\\-encoding=[gzip],connection,accept,accept\\-language,accept\\-charset,appengine\\-google",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,host,user-agent,accept=[.*/.*],accept-encoding=[gzip],connection,accept-language,accept-charset,xxxterm",
+    "pattern": "1,host,accept\\-encoding=[gzip, deflate],user\\-agent,accept=[,.*/.*;q=0.5],accept\\-language,accept\\-charset=[utf\\-8;q=0.7,.*;q=0.3],connection,wosbrowser",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,host,user-agent,accept=[.*/.*],accept-encoding=[gzip],accept-language,connection,accept-charset,keep-alive,epiphany/",
+    "pattern": "1,host,user\\-agent,accept=[.*/.*],accept\\-encoding=[gzip],connection,accept\\-language,accept\\-charset,xxxterm",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": "1,date,server,?last-modified,?accept-ranges=[bytes],?content-length,?connection=[close],?transfer-encoding=[chunked],content-type,keep-alive,apache",
+    "pattern": "1,accept=[.*/.*],accept\\-encoding=[gzip],user\\-agent,host,connection=[keep\\-alive],accept\\-language,accept\\-charset,google desktop/",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,user\\-agent,accept=[.*/.*],accept\\-encoding=[gzip],connection=[keep\\-alive],accept\\-language,accept\\-charset,luakit",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,host,user\\-agent,accept=[.*/.*],accept\\-encoding=[gzip],accept\\-language,connection,accept\\-charset,keep\\-alive,epiphany/",
+    "os": "",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,date,server,?last\\-modified,?accept\\-ranges=[bytes],?content\\-length,?content\\-range,keep\\-alive=[timeout],connection=[keep\\-alive],?transfer\\-encoding=[chunked],content\\-type,,apache",
     "os": "2.x",
     "confidence": 70
   },
   {
-    "pattern": "1,server,content-type,?content-length,date,connection=[close],keep-alive,accept-ranges,apache",
+    "pattern": "1,date,server,?last\\-modified,?accept\\-ranges=[bytes],?content\\-length,?connection=[close],?transfer\\-encoding=[chunked],content\\-type,keep\\-alive,apache",
+    "os": "2.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,date,server,connection=[keep\\-alive],keep\\-alive=[timeout],content\\-type,accept\\-ranges,apache",
+    "os": "2.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,date,server,?last\\-modified,?accept\\-ranges=[bytes],?content\\-length,content\\-type,keep\\-alive=[timeout],connection=[keep\\-alive],,apache",
+    "os": "2.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,server,content\\-type,?content\\-length,date,connection=[keep\\-alive],keep\\-alive,accept\\-ranges,apache",
     "os": "1.x",
     "confidence": 70
   },
   {
-    "pattern": "1,?content-length,content-type,?etag,server,date,connection,keep-alive,accept-ranges,microsoft-iis/",
+    "pattern": "1,server,content\\-type,?content\\-length,date,connection=[close],keep\\-alive,accept\\-ranges,apache",
+    "os": "1.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,?content\\-length,content\\-type,?etag,server,date,connection,keep\\-alive,accept\\-ranges,microsoft\\-iis/",
     "os": "7.x",
     "confidence": 70
   },
   {
-    "pattern": "1,?content-length,content-type,?etag,server,date,connection=[close],keep-alive,accept-ranges,microsoft-iis/",
+    "pattern": "1,?content\\-length,content\\-type,?etag,server,date,connection=[close],keep\\-alive,accept\\-ranges,microsoft\\-iis/",
     "os": "7.x",
     "confidence": 70
   },
   {
-    "pattern": "1,?etag,?last-modified,accept-ranges=[bytes],content-type,?vary,?content-length,date,server,connection,keep-alive,lighttpd/",
+    "pattern": "1,?etag,?last\\-modified,accept\\-ranges=[bytes],content\\-type,?vary,?content\\-length,date,server,connection,keep\\-alive,lighttpd/",
     "os": "2.x",
     "confidence": 70
   },
   {
-    "pattern": "1,?etag,?last-modified,transfer-encoding=[chunked],content-type,?vary,?content-length,date,server,connection,keep-alive,lighttpd/",
+    "pattern": "1,?etag,?last\\-modified,transfer\\-encoding=[chunked],content\\-type,?vary,?content\\-length,date,server,connection,keep\\-alive,lighttpd/",
     "os": "2.x",
     "confidence": 70
   },
   {
-    "pattern": "1,content-type,accept-ranges=[bytes],?etag,?last-modified,date,server,connection,keep-alive,lighttpd/",
+    "pattern": "1,content\\-type,accept\\-ranges=[bytes],?etag,?last\\-modified,date,server,connection,keep\\-alive,lighttpd/",
     "os": "1.x",
     "confidence": 70
   },
   {
-    "pattern": "1,content-type,transfer-encoding=[chunked],?etag,?last-modified,date,server,connection,keep-alive,lighttpd/",
+    "pattern": "1,content\\-type,transfer\\-encoding=[chunked],?etag,?last\\-modified,date,server,connection,keep\\-alive,lighttpd/",
     "os": "1.x",
     "confidence": 70
   },
   {
-    "pattern": "0,content-type,content-length,connection=[close],date,server,keep-alive,accept-ranges,lighttpd/",
+    "pattern": "0,content\\-type,content\\-length,connection=[close],date,server,keep\\-alive,accept\\-ranges,lighttpd/",
     "os": "1.x",
     "confidence": 70
   },
   {
-    "pattern": "1,server,date,content-type,?content-length,?last-modified,connection=[close],keep-alive,accept-ranges,nginx/",
+    "pattern": "1,server,date,content\\-type,?content\\-length,?last\\-modified,connection=[keep\\-alive],keep\\-alive=[timeout],accept\\-ranges=[bytes],,nginx/",
     "os": "1.x",
     "confidence": 70
   },
   {
-    "pattern": "1,server,date,content-type,?content-length,connection=[close],?last-modified,keep-alive,accept-ranges,nginx/",
+    "pattern": "1,server,date,content\\-type,?content\\-length,?last\\-modified,connection=[close],keep\\-alive,accept\\-ranges,nginx/",
+    "os": "1.x",
+    "confidence": 70
+  },
+  {
+    "pattern": "1,server,date,content\\-type,?content\\-length,connection=[keep\\-alive],?last\\-modified,keep\\-alive,accept\\-ranges,nginx/",
     "os": "0.x",
     "confidence": 70
   },
   {
-    "pattern": ".*,content-type,x-content-type-options=[nosniff],date,server=[sffe],connection,accept-ranges,keep-alive,connection,",
+    "pattern": "1,server,date,content\\-type,?content\\-length,connection=[close],?last\\-modified,keep\\-alive,accept\\-ranges,nginx/",
+    "os": "0.x",
+    "confidence": 70
+  },
+  {
+    "pattern": ".*,content\\-type,x\\-content\\-type\\-options=[nosniff],date,server=[sffe],connection,accept\\-ranges,keep\\-alive,connection,",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": ".*,date,content-type,server=[gws],connection,accept-ranges,keep-alive,",
+    "pattern": ".*,date,content\\-type,server=[gws],connection,accept\\-ranges,keep\\-alive,",
     "os": "",
     "confidence": 70
   },
   {
-    "pattern": ".*,content-type,x-content-type-options=[nosniff],server=[gse],connection,accept-ranges,keep-alive,",
+    "pattern": ".*,content\\-type,x\\-content\\-type\\-options=[nosniff],server=[gse],connection,accept\\-ranges,keep\\-alive,",
     "os": "",
     "confidence": 70
   }

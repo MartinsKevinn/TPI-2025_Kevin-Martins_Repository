@@ -2,7 +2,7 @@ import re
 import json
 from pathlib import Path
 
-# Chemin vers le fichier .fp original
+# Chemin vers les fichiers
 input_fp_path = Path("src/utils/p0f.fp")
 output_json_path = Path("src/utils/tcp_fingerprints_from_p0f.json")
 
@@ -13,11 +13,16 @@ sig_pattern = re.compile(r"sig\s*=\s*(.+)")
 entries = []
 current_label = None
 
+def sanitize_pattern(pattern: str) -> str:
+    # Échapper les tirets non placés dans un intervalle valide (ex: a-z)
+    # On échappe les tirets sauf s'ils sont entre deux caractères (ex: a-z)
+    return re.sub(r'(?<!\\)-', r'\-', pattern)
+
 for line in input_fp_path.read_text(encoding="utf-8").splitlines():
     line = line.strip()
 
     if not line or line.startswith(";"):
-        continue  # Ignorer les commentaires et lignes vides
+        continue
 
     label_match = label_pattern.match(line)
     if label_match:
@@ -26,19 +31,23 @@ for line in input_fp_path.read_text(encoding="utf-8").splitlines():
 
     sig_match = sig_pattern.match(line)
     if sig_match and current_label:
-        sig = sig_match.group(1).strip()
+        raw_sig = sig_match.group(1).strip()
 
-        # Transformation simplifiée : extraire infos pertinentes
-        # Le format de sig est trop complexe, on fait une version simplifiée
-        # Pour la démonstration, on ne garde que certaines infos
-        simplified = {
-            "pattern": sig.replace("*", ".*").replace(":", ",").lower(),  # Expression régulière
-            "os": current_label.split(":")[-1].strip(),
-            "confidence": 70  # valeur par défaut, à ajuster si souhaité
-        }
-        entries.append(simplified)
+        # Simplification du motif
+        simplified = raw_sig.replace("*", ".*").replace(":", ",").lower()
+        simplified = sanitize_pattern(simplified)
 
-# Sauvegarder au format JSON
+        try:
+            # Vérifier que le motif est une regex valide
+            re.compile(simplified)
+            entries.append({
+                "pattern": simplified,
+                "os": current_label.split(":")[-1].strip(),
+                "confidence": 70
+            })
+        except re.error:
+            print(f"❌ Motif regex invalide ignoré : {simplified}")
+
+# Sauvegarde
 output_json_path.write_text(json.dumps(entries, indent=2, ensure_ascii=False), encoding="utf-8")
-
-entries[:5]  # Afficher un échantillon pour vérifier
+print(f"✅ {len(entries)} empreintes enregistrées dans {output_json_path}")
