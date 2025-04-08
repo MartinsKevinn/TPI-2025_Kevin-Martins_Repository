@@ -79,7 +79,7 @@ def guess_device_type(device):
     if device.get("arp_analysis", {}).get("acts_as_scanner"):
         return "Appareil actif – scan réseau via ARP"
 
-    # 🔍 Si rien de tout ça : tenter de déterminer si c'est un mobile silencieux
+    #Si rien de tout ça, tenter de déterminer si c'est un mobile silencieux
     if (
         not device.get("http_user_agents") and
         not any("vendor_class_id" in entry or "hostname" in entry for entry in device.get("dhcp_info", [])) and
@@ -94,7 +94,12 @@ def guess_device_type(device):
 
 
 def parse_pcap(file_path, oui_db):
-    packets = rdpcap(file_path)
+    try:
+        packets = rdpcap(file_path)
+    except Exception as e:
+        print(f"❌ Erreur lors de la lecture du fichier PCAP : {e}")
+        return {"metadata": {}, "devices": []}
+
     used_packets = 0
 
     if packets:
@@ -200,7 +205,7 @@ def parse_pcap(file_path, oui_db):
                 if hostname_dhcp:
                     device["hostname_from_dhcp"] = hostname_dhcp
 
-                # Analyse du vendor_class_id pour supposer l'OS (à prendre avec précaution)
+                #Analyse du vendor_class_id pour supposer l'OS (à prendre avec précaution)
                 vendor_class_id = dhcp_info.get("vendor_class_id")
                 param_req_list = dhcp_info.get("param_req_list", [])
 
@@ -209,36 +214,36 @@ def parse_pcap(file_path, oui_db):
                 if vendor_class_id:
                     vendor_class_id = str(vendor_class_id).upper()
                     if "MSFT" in vendor_class_id:
-                        if "5.0" in vendor_class_id:
-                            os_from_dhcp = "Système Windows (MSFT 5.0 – XP ou plus récent)"
-                        elif "7.0" in vendor_class_id:
-                            os_from_dhcp = "Système Windows (MSFT 7.0 – probablement Win 7/10/11)"
-                        else:
-                            os_from_dhcp = "Système Windows (version inconnue)"
-                    elif "ANDROID" in vendor_class_id:
+                        os_from_dhcp = "Système Windows (version inconnue)"
+                    elif "ANDROID" or "dhcpcd-5.5.6" or "dhcp-9" in vendor_class_id:
                         os_from_dhcp = "Système Android"
                     elif "APPLE" in vendor_class_id or "MACOS" in vendor_class_id:
                         os_from_dhcp = "Apple macOS ou iOS"
                     elif "CHROME" in vendor_class_id:
                         os_from_dhcp = "Chrome OS"
-                    elif "UBUNTU" in vendor_class_id:
-                        os_from_dhcp = "Linux (Ubuntu)"
                     elif "LINUX" in vendor_class_id:
                         os_from_dhcp = "Système Linux (générique)"
                     elif "PXE" in vendor_class_id:
                         os_from_dhcp = "Client de boot réseau (PXE)"
 
                 #Analyse complémentaire avec param_req_list
-                #Exemple de signature typique : [1, 3, 6, 15, 31, 33, 43, 44, 46, 47, 121]
+                windows_options = {1, 3, 6, 15, 26, 28, 51, 58, 59, 121, 119, 252}
+                apple_options   = {95, 114}
+                generic_options = {12, 15, 6}
+
+                #Si param_req_list n'est pas déjà un ensemble, vous pouvez le convertir:
+                param_req_set = set(param_req_list)
+
                 if not os_from_dhcp:
-                    if 121 in param_req_list and 119 in param_req_list and 252 in param_req_list:
+                    if windows_options.issubset(param_req_set):
                         os_from_dhcp = "Probablement un système Windows récent"
-                    elif 95 in param_req_list and 114 in param_req_list:
+                    elif apple_options.issubset(param_req_set):
                         os_from_dhcp = "Probablement un système Apple"
-                    elif 12 in param_req_list and 15 in param_req_list and 6 in param_req_list:
+                    elif generic_options.issubset(param_req_set):
                         os_from_dhcp = "Système client générique (DHCP standard)"
 
-                # Ajout dans les données de l'appareil si une estimation a été trouvée
+
+                #Ajout dans les données de l'appareil si une estimation a été trouvée
                 if os_from_dhcp:
                     device.setdefault("os_guesses_dhcp", set()).add(os_from_dhcp)
 
@@ -271,7 +276,6 @@ def parse_pcap(file_path, oui_db):
 
                 fingerprint = f"W:{window_size},MSS:{mss},Opts:{'-'.join(opt_names)}"
                 device["tcp_syn_fingerprints"].add(fingerprint)
-                print("→ Fingerprint capturé :", fingerprint)
 
 
 
@@ -304,7 +308,7 @@ def parse_pcap(file_path, oui_db):
             if pkt.haslayer(ARP):
                 src_ip = pkt[ARP].psrc
                 src_mac = pkt[ARP].hwsrc
-                arp_name_hint = pkt.src if pkt.src != src_mac else None  # scapy peut donner un nom ici
+                arp_name_hint = pkt.src if pkt.src != src_mac else None
 
                 if src_mac not in devices_by_mac:
                     mac_prefix = src_mac.lower()[0:8]
@@ -367,12 +371,12 @@ def parse_pcap(file_path, oui_db):
                 src_mac = pkt[ARP].hwsrc
                 dst_ip = pkt[ARP].pdst
 
-                # Enregistrement des IP ciblées par ce MAC
+                #Enregistrement des IP ciblées par ce MAC
                 if src_mac not in arp_requests_by_mac:
                     arp_requests_by_mac[src_mac] = set()
                 arp_requests_by_mac[src_mac].add(dst_ip)
 
-                # Qui est recherché dans le réseau ?
+                #Qui est recherché dans le réseau ?
                 if dst_ip not in arp_seen_targets:
                     arp_seen_targets[dst_ip] = set()
                 arp_seen_targets[dst_ip].add(src_mac)
@@ -389,15 +393,15 @@ def parse_pcap(file_path, oui_db):
             )
             device["arp_analysis"]["only_arp"] = not bool(has_traffic)
 
-            # Est-ce qu'il émet pleins de requêtes ARP ?
+            #Est-ce qu'il émet pleins de requêtes ARP ?
             requested_ips = arp_requests_by_mac.get(mac, set())
             device["arp_analysis"]["requested_ips"] = list(requested_ips)
-            device["arp_analysis"]["acts_as_scanner"] = len(requested_ips) > 10  # valeur ajustable
+            device["arp_analysis"]["acts_as_scanner"] = len(requested_ips) > 10
             device["arp_analysis"]["arp_requested_count"] = len(requested_ips)
 
-            # Est-il est souvent recherché ?
+            #Est-il est souvent recherché ?
             times_targeted = sum([1 for targets in arp_seen_targets.values() if mac in targets])
-            device["arp_analysis"]["targeted_by_others"] = times_targeted > 3  # ajustable
+            device["arp_analysis"]["targeted_by_others"] = times_targeted > 3
             device["arp_analysis"]["likely_passive"] = not has_traffic and times_targeted > 0
 
 
@@ -427,7 +431,7 @@ def parse_pcap(file_path, oui_db):
             protocols_ports_cleaned[proto] = sorted(cleaned_ports)
         device["protocols_ports"] = protocols_ports_cleaned
 
-        # 🔧 Conversion en liste simple pour les tableaux si besoin
+        #Conversion en liste simple pour les tableaux si besoin
         device["ports_tcp"] = sorted(list(device.get("ports_tcp", [])))
         device["ports_udp"] = sorted(list(device.get("ports_udp", [])))
 
@@ -460,11 +464,11 @@ def parse_pcap(file_path, oui_db):
 
 if __name__ == "__main__":
     oui_db = load_oui_database("src/utils/oui.csv")
-    # Vérifier si un fichier .pcap est passé en argument
+    #Vérifier si un fichier .pcap est passé en argument
     if len(sys.argv) > 1:
         pcap_path = sys.argv[1]
     else:
-        # Sinon, ouvrir le sélecteur de fichier
+        #Sinon, ouvrir le sélecteur de fichier
         root = tk.Tk()
         root.withdraw()
         print("📂 Sélectionnez un fichier .pcap à analyser")

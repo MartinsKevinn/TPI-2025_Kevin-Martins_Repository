@@ -6,7 +6,7 @@ def extract_tls_info(pkt):
 
     raw_load = pkt[Raw].load
 
-    if not raw_load.startswith(b'\x16\x03'):  # TLS Handshake record
+    if not raw_load.startswith(b'\x16\x03'):  #TLS Handshake record
         return None
 
     try:
@@ -17,7 +17,7 @@ def extract_tls_info(pkt):
         dest_ip = pkt[IP].dst
         sni_hostname = None
 
-        # Extraire SNI si possible
+        #Extraire SNI si possible
         offset = 5 + 4
         session_id_len = raw_load[offset]
         offset += 1 + session_id_len
