@@ -55,7 +55,7 @@ if __name__ == "__main__":
         exit(1)
 
     try:
-        duration = int(input("🕒 Durée de la capture (en secondes) : "))
+        duration = int(input("🕒 Durée de la capture (en secondes) (3600 pour 1 heure | 86400 pour 1 jour | 604800 pour 1 semaine) : "))
         output_file = start_capture(idx, duration)
     except ValueError:
         print("❌ Durée invalide.")
