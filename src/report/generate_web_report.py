@@ -58,6 +58,7 @@ html = f"""
         <p><strong>Note :</strong> {metadata.get("note")}</p>
         <p><strong>Paquets capturés :</strong> {metadata.get("packet_count")}</p>
         <p><strong>Paquets analysés :</strong> {metadata.get("used_packets")}</p>
+        <p><strong>Appareils détectés :</strong> {{ device_count }}</p>
         <p><strong>Version de l'outil :</strong> Scapy {metadata.get("scapy_version", "inconnue")}</p>
     </div>
 """
