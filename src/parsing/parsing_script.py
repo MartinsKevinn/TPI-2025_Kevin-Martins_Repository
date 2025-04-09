@@ -395,7 +395,7 @@ def parse_pcap(file_path, oui_db):
 
         #Top domaines contactés
         domain_counts = Counter(device.get("domain_contact_counter", {}))
-        device["top_domains_contacted"] = [domain for domain, _ in domain_counts.most_common(10)]
+        device["top_domains_contacted"] = [domain for domain, _ in domain_counts.most_common(100)]
         device.pop("domain_contact_counter", None)
 
         #Ports par protocole avec application associée
@@ -433,6 +433,7 @@ def parse_pcap(file_path, oui_db):
             "note": "Durée réelle estimée entre le 1er et le dernier paquet. Peut être plus courte que la durée de capture planifiée.",
             "packet_count": len(packets),
             "used_packets": used_packets,
+            "device_count": len(enriched_devices),
             "source_file": file_path,
             "scapy_version": scapy.__version__
         },
