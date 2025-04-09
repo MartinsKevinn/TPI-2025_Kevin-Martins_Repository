@@ -56,7 +56,7 @@ html = f"""
         <p><strong>Début de capture :</strong> {metadata.get("capture_start", "Inconnu")}</p>
         <p><strong>Fin de capture :</strong> {metadata.get("capture_end", "Inconnu")}</p>
         <p><strong>Durée :</strong> {metadata.get("capture_duration_seconds", 0)} secondes</p>
-        <p><strong>Durée :</strong> {metadata.get("note")}</p>
+        <p><strong>Note :</strong> {metadata.get("note")}</p>
         <p><strong>Paquets capturés :</strong> {metadata.get("packet_count")}</p>
         <p><strong>Paquets analysés :</strong> {metadata.get("used_packets")}</p>
         <p><strong>Version de l'outil :</strong> Scapy {metadata.get("scapy_version", "inconnue")}</p>

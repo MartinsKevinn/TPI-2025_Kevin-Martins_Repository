@@ -4,7 +4,7 @@ from datetime import datetime
 from pathlib import Path
 
 def list_interfaces():
-    print("📡 Interfaces détectées (via dumpcap) :\n")
+    print("Interfaces détectées (via dumpcap) :\n")
     result = subprocess.run(["dumpcap", "-D"], capture_output=True, text=True)
 
     if result.returncode != 0:
@@ -19,7 +19,7 @@ def list_interfaces():
 
 def choose_interface():
     try:
-        index = int(input("\n👉 Entrez le numéro de l'interface à utiliser : "))
+        index = int(input("\nEntrez le numéro de l'interface à utiliser : "))
         return index
     except ValueError:
         print("❌ Entrée invalide.")
@@ -55,7 +55,7 @@ if __name__ == "__main__":
         exit(1)
 
     try:
-        duration = int(input("🕒 Durée de la capture (en secondes) (3600 pour 1 heure | 86400 pour 1 jour | 604800 pour 1 semaine) : "))
+        duration = int(input("Durée de la capture (en secondes) (3600 pour 1 heure | 86400 pour 1 jour | 604800 pour 1 semaine) : "))
         output_file = start_capture(idx, duration)
     except ValueError:
         print("❌ Durée invalide.")
@@ -64,7 +64,7 @@ if __name__ == "__main__":
 choice = input("Souhaitez-vous lancer l'analyse du fichier capturé maintenant ? (y/n) : ").strip().lower()
 
 if choice == "y":
-    print("🔍 Lancement de l'analyse...")
+    print("Lancement de l'analyse...")
     try:
         subprocess.run(["python", "src/parsing/parsing_script.py", output_file], check=True)
     except subprocess.CalledProcessError as e:

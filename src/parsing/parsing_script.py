@@ -486,13 +486,13 @@ if __name__ == "__main__":
     print(f"✅ Analyse terminée. Rapport généré : {output_file}")
 
     #Génération HTML direct si nécessaire
-    choice = input("Souhaitez-vous générer la version HTML du rapport maintenant ? (y/n) : ").strip().lower()
+    choice = input("Souhaitez-vous générer la version HTML du rapport maintenant ? (y/n) (o/n): ").strip().lower()
 
-    if choice == "y":
+    if choice == "y" or "o":
         try:
-            print("\n🧩 Génération du rapport HTML en cours...")
+            print("\n Génération du rapport HTML en cours...")
             subprocess.run(["python", "src/report/generate_web_report.py", output_file], check=True)
         except subprocess.CalledProcessError as e:
             print(f"❌ Erreur lors de la génération HTML : {e}")
     else:
-        print("📄 Vous pourrez générer le rapport HTML plus tard avec generate_web_report.py")
+        print("Vous pourrez générer le rapport HTML plus tard avec generate_web_report.py")
