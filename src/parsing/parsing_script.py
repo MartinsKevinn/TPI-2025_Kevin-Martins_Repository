@@ -69,7 +69,7 @@ def guess_device_type(device):
         return "Probablement une TV connectée"
     if "nas" in hostname or "synology" in manufacturer or "qnap" in manufacturer:
         return "NAS"
-    if "router" in hostname or "gateway" in hostname or "asustek" in manufacturer:
+    if "router" in hostname or "gateway" in hostname:
         return "Routeur"
     if "cast" in hostname:
         return "Appareil qui fait effet Google Chromecast"
@@ -90,8 +90,6 @@ def guess_device_type(device):
         return "Peu de données, donc probablement un appareil mobile (smartphone, tablette, etc.)"
 
     return "Inconnu"
-
-
 
 def parse_pcap(file_path, oui_db):
     try:
@@ -149,8 +147,6 @@ def parse_pcap(file_path, oui_db):
 
 
 
-
-
             #IPv4
             if pkt.haslayer(IP):
                 src_ip = pkt[IP].src
@@ -178,13 +174,9 @@ def parse_pcap(file_path, oui_db):
 
 
 
-
-
             #IPv6
             if pkt.haslayer(IPv6):
                 device["ipv6_addresses"].add(pkt[IPv6].src)
-
-
 
 
 
@@ -231,7 +223,7 @@ def parse_pcap(file_path, oui_db):
                 apple_options   = {95, 114}
                 generic_options = {12, 15, 6}
 
-                #Si param_req_list n'est pas déjà un ensemble, vous pouvez le convertir:
+                #Si param_req_list n'est pas déjà un ensemble
                 param_req_set = set(param_req_list)
 
                 if not os_from_dhcp:
@@ -249,15 +241,11 @@ def parse_pcap(file_path, oui_db):
 
 
 
-
-
             #TCP / UDP ports
             if pkt.haslayer(TCP):
                 device["protocols_ports"].setdefault("TCP", set()).update([pkt[TCP].sport, pkt[TCP].dport])
             elif pkt.haslayer(UDP):
                 device["protocols_ports"].setdefault("UDP", set()).update([pkt[UDP].sport, pkt[UDP].dport])
-
-
 
 
 
@@ -279,16 +267,12 @@ def parse_pcap(file_path, oui_db):
 
 
 
-
-
             #HTTP User Agent
             if pkt.haslayer(Raw) and b"User-Agent" in pkt[Raw].load:
                 raw_data = pkt[Raw].load.decode(errors="ignore")
                 for line in raw_data.split("\\r\\n"):
                     if line.startswith("User-Agent:"):
                         device["http_user_agents"].add(line.replace("User-Agent:", "").strip())
-
-
 
 
 
@@ -300,8 +284,6 @@ def parse_pcap(file_path, oui_db):
                     device["mdns_services"].add(query)
                     hostname = query.split("._")[0]
                     device["observed_hostnames"].add(hostname)
-
-
 
 
 
@@ -339,9 +321,6 @@ def parse_pcap(file_path, oui_db):
 
 
 
-
-
-
             #DNS
             if pkt.haslayer(DNS):
                 dns_layer = pkt[DNS]
@@ -351,8 +330,6 @@ def parse_pcap(file_path, oui_db):
                     if len(parts) >= 2:
                         base_domain = ".".join(parts[-2:])
                         device["domain_contact_counter"][base_domain] = device["domain_contact_counter"].get(base_domain, 0) + 1
-
-
 
 
 

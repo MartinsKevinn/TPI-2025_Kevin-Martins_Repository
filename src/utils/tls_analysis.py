@@ -37,7 +37,7 @@ def extract_tls_info(pkt):
             ext_len = int.from_bytes(raw_load[offset+2:offset+4], 'big')
             offset += 4
 
-            if ext_type == 0x00:  # SNI
+            if ext_type == 0x00:  #SNI
                 server_name_len = int.from_bytes(raw_load[offset+5:offset+7], 'big')
                 sni_hostname = raw_load[offset+7:offset+7+server_name_len].decode(errors="ignore")
                 break

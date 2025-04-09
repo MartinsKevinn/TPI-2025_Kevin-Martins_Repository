@@ -31,7 +31,7 @@ def start_capture(interface_index, duration):
     output_dir.mkdir(parents=True, exist_ok=True)
 
     output_path = output_dir / f"capture_{timestamp}.pcap"
-    print(f"\n⏳ Démarrage de la capture pendant {duration} secondes...")
+    print(f"\nDémarrage de la capture pendant {duration} secondes...")
 
     try:
         subprocess.run([

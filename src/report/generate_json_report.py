@@ -9,7 +9,7 @@ def export_json(data, source_pcap_path, output_dir="results"):
     try:
         timestamp = datetime.strptime(capture_start_str, "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d_%H-%M-%S")
     except Exception:
-        # fallback au timestamp actuel en cas d'erreur
+        #fallback au timestamp actuel en cas d'erreur
         timestamp = datetime.now().strftime("%Y-%m-%d_%H:%M:%S")
         print("Pas de timestamp dans le fichier pcap, utilisation de la date actuelle pour la génération du JSON !")
 

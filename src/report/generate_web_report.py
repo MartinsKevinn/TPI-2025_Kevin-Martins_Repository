@@ -8,7 +8,6 @@ import sys
 if len(sys.argv) > 1:
         json_path = sys.argv[1]
 else:
-    # Fenêtre tkinter masquée
     root = tk.Tk()
     root.withdraw()
     print("📂 Sélectionnez le fichier .json à transformer")
@@ -26,7 +25,7 @@ with open(json_path, "r", encoding="utf-8") as f:
 metadata = data.get("metadata", {})
 devices = data.get("devices", [])
 
-# Générer un HTML simple
+# Générer le haut de la page avec metadatas
 html = f"""
 <!DOCTYPE html>
 <html lang="fr">
@@ -64,7 +63,6 @@ html = f"""
 """
 
 # Priorité d'affichage du nom
-
 def determine_device_name(device):
     if device.get("hostname_from_dhcp"):
         return device["hostname_from_dhcp"]
@@ -85,7 +83,6 @@ for device in devices:
         <p><strong>IPv6 :</strong> {', '.join(device.get("ipv6_addresses", []))}</p>
         <p><strong>ARP détecté :</strong> {'✅ Oui' if device.get('arp_detected') else '❌ Non'}</p>
     """
-    # Section analyse ARP
     arp = device.get("arp_analysis", {})
     if arp:
         html += """

@@ -25,7 +25,7 @@ def identify_os_from_fingerprint(fingerprint: str) -> dict:
     for entry in FINGERPRINT_DB:
         pattern = entry["pattern"]
 
-        # ⚠️ Ignorer les motifs simples qui ne sont que des MTU (ex: "1450")
+        #Ignorer les motifs simples qui ne sont que des MTU (ex: "1450")
         if re.fullmatch(r"\d{3,5}", pattern):
             continue
 
@@ -44,7 +44,7 @@ def identify_os_from_fingerprint(fingerprint: str) -> dict:
                 "notes": entry["description"]
             }
 
-    # Si rien ne correspond
+    #Si rien ne correspond
     return {
         "os_guess": "Système inconnu",
         "confidence": 0
@@ -61,7 +61,7 @@ def enrich_devices_with_os_guess(devices: list) -> list:
             })
     return devices
 
-# Test direct
+#Test direct
 if __name__ == "__main__":
     test_devices = [
         {
