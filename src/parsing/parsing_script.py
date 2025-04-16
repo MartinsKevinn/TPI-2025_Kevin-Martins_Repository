@@ -466,7 +466,7 @@ if __name__ == "__main__":
     #Génération HTML direct si nécessaire
     choice = input("Souhaitez-vous générer la version HTML du rapport maintenant ? (y/n) (o/n): ").strip().lower()
 
-    if choice == "y" or "o":
+    if choice == ("y","o"):
         try:
             print("\n Génération du rapport HTML en cours...")
             subprocess.run(["python", "src/report/generate_web_report.py", output_file], check=True)
